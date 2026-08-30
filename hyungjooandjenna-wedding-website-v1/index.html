@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hyung Joo & Jenna | June 26, 2027</title>
+  <meta name="description" content="Wedding website for Hyung Joo and Jenna — June 26, 2027 in Seoul, Korea." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Hyung Joo and Jenna home">H & J</a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+
+    <nav id="mainNav">
+      <a href="#story" data-en="Our Story" data-ko="우리 이야기">Our Story</a>
+      <a href="#wedding" data-en="Wedding" data-ko="예식 안내">Wedding</a>
+      <a href="#getting-here" data-en="Getting Here" data-ko="오시는 길">Getting Here</a>
+      <a href="#us-reception" data-en="U.S. Reception" data-ko="미국 피로연">U.S. Reception</a>
+      <a href="#travel" data-en="Travel" data-ko="여행 안내">Travel</a>
+      <a href="#hotels" data-en="Hotels" data-ko="호텔">Hotels</a>
+      <a href="#seoul" data-en="Seoul Guide" data-ko="서울 가이드">Seoul Guide</a>
+      <a href="#faq" data-en="FAQ" data-ko="자주 묻는 질문">FAQ</a>
+      <a href="#rsvp" data-en="RSVP" data-ko="참석 여부">RSVP</a>
+    </nav>
+
+    <div class="language-switch" aria-label="Language selector">
+      <button class="lang-option active" data-lang="en">EN</button>
+      <span>/</span>
+      <button class="lang-option" data-lang="ko">한국어</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="intro-hero">
+      <div class="intro-hero-inner">
+        <p class="eyebrow" data-en="WE'RE GETTING MARRIED" data-ko="저희 결혼합니다">
+          WE'RE GETTING MARRIED
+        </p>
+
+        <h1 class="intro-names">
+          <span>Hyung Joo</span>
+          <em>&</em>
+          <span>Jenna</span>
+        </h1>
+
+        <div class="intro-divider"></div>
+
+        <p class="intro-date" data-en="JUNE 26, 2027" data-ko="2027년 6월 26일">
+          JUNE 26, 2027
+        </p>
+        <p class="intro-location" data-en="SEOUL, KOREA" data-ko="서울, 대한민국">
+          SEOUL, KOREA
+        </p>
+
+        <a class="intro-scroll-link" href="#film">
+          <span data-en="WATCH OUR FILM" data-ko="영상 보기">WATCH OUR FILM</span>
+          <span class="arrow">↓</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="film" class="film-section">
+      <div class="film-heading">
+        <p class="eyebrow" data-en="OUR FILM" data-ko="우리의 영상">OUR FILM</p>
+        <h2 data-en="A little piece of our story." data-ko="저희의 이야기를 영상으로 담았습니다.">
+          A little piece of our story.
+        </h2>
+      </div>
+
+      <div class="film-frame film-placeholder" id="filmFrame">
+        <video
+          id="weddingFilm"
+          controls
+          playsinline
+          preload="metadata"
+          poster=""
+          aria-label="Hyung Joo and Jenna wedding film">
+          <source src="media/wedding-film.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <div class="film-placeholder-content" id="filmPlaceholder">
+          <div class="play-mark">▶</div>
+          <p data-en="Video coming soon" data-ko="영상이 곧 추가됩니다">Video coming soon</p>
+          <small data-en="This space is ready for your engagement or wedding film."
+                 data-ko="약혼 영상 또는 웨딩 영상을 이곳에 추가할 예정입니다.">
+            This space is ready for your engagement or wedding film.
+          </small>
+        </div>
+      </div>
+    </section>
+
+    <section class="photo-intro-section">
+      <div class="section-heading">
+        <p class="eyebrow" data-en="PHOTOS" data-ko="사진">PHOTOS</p>
+        <h2 data-en="More memories coming soon." data-ko="사진은 추후 추가할 예정입니다.">
+          More memories coming soon.
+        </h2>
+        <p class="section-intro"
+           data-en="After our engagement session, we’ll add our favorite photos here without placing text over the images."
+           data-ko="약혼 촬영 후 마음에 드는 사진들을 이곳에 추가할 예정이며, 사진 위에는 이름이나 문구를 겹치지 않게 배치할 예정입니다.">
+          After our engagement session, we’ll add our favorite photos here without placing text over the images.
+        </p>
+      </div>
+
+      <div class="photo-gallery-preview">
+        <div class="gallery-photo placeholder-photo">
+          <div class="placeholder-inner">
+            <span data-en="Engagement photo" data-ko="약혼 사진">Engagement photo</span>
+          </div>
+        </div>
+        <div class="gallery-photo placeholder-photo">
+          <div class="placeholder-inner">
+            <span data-en="Engagement photo" data-ko="약혼 사진">Engagement photo</span>
+          </div>
+        </div>
+        <div class="gallery-photo placeholder-photo">
+          <div class="placeholder-inner">
+            <span data-en="Engagement photo" data-ko="약혼 사진">Engagement photo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="countdown-section" aria-label="Wedding countdown">
+      <p class="eyebrow" data-en="COUNTING DOWN TO" data-ko="결혼식까지">COUNTING DOWN TO</p>
+      <div class="countdown" id="countdown">
+        <div><strong id="days">000</strong><span data-en="Days" data-ko="일">Days</span></div>
+        <div><strong id="hours">00</strong><span data-en="Hours" data-ko="시간">Hours</span></div>
+        <div><strong id="minutes">00</strong><span data-en="Minutes" data-ko="분">Minutes</span></div>
+        <div><strong id="seconds">00</strong><span data-en="Seconds" data-ko="초">Seconds</span></div>
+      </div>
+    </section>
+
+    <section id="story" class="section story-section">
+      <div class="story-copy">
+        <p class="eyebrow" data-en="OUR STORY" data-ko="우리 이야기">OUR STORY</p>
+        <h2 data-en="From here to forever." data-ko="함께 걸어온 길, 그리고 앞으로.">From here to forever.</h2>
+        <p data-en="This section will tell the story of how we met, the moments that brought us closer, and the beginning of our next chapter together."
+           data-ko="이곳에는 저희가 처음 만나 함께해 온 이야기와, 앞으로 시작될 새로운 여정에 대한 이야기를 담을 예정입니다.">
+          This section will tell the story of how we met, the moments that brought us closer,
+          and the beginning of our next chapter together.
+        </p>
+        <p class="muted" data-en="We’ll add your engagement story and photos here later."
+           data-ko="추후 약혼 이야기와 사진을 이곳에 추가할 예정입니다.">
+          We’ll add your engagement story and photos here later.
+        </p>
+      </div>
+
+      <div class="story-photo placeholder-photo">
+        <div class="placeholder-inner">
+          <span data-en="Photo placeholder" data-ko="사진 자리">Photo placeholder</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="wedding" class="section wedding-section">
+      <div class="section-heading">
+        <p class="eyebrow" data-en="THE WEDDING" data-ko="예식 안내">THE WEDDING</p>
+        <h2 data-en="Saturday, June 26, 2027" data-ko="2027년 6월 26일 토요일">Saturday, June 26, 2027</h2>
+        <p class="venue" data-en="Jamsil Lotte World Korean Traditional Wedding Venue · Seoul"
+           data-ko="잠실 롯데월드 전통혼례장 · 서울">
+          Jamsil Lotte World Korean Traditional Wedding Venue · Seoul
+        </p>
+      </div>
+
+      <div class="info-cards">
+        <article class="info-card">
+          <span class="card-number">01</span>
+          <h3 data-en="Ceremony" data-ko="혼례식">Ceremony</h3>
+          <p data-en="Korean traditional wedding ceremony at Lotte World in Jamsil."
+             data-ko="잠실 롯데월드 전통혼례장에서 한국 전통혼례로 진행됩니다.">
+            Korean traditional wedding ceremony at Lotte World in Jamsil.
+          </p>
+          <p class="muted" data-en="Exact ceremony time coming soon." data-ko="정확한 예식 시간은 추후 안내드리겠습니다.">
+            Exact ceremony time coming soon.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <span class="card-number">02</span>
+          <h3 data-en="Reception" data-ko="피로연">Reception</h3>
+          <p data-en="Reception details will be added once the final plan is confirmed."
+             data-ko="피로연 장소와 일정은 확정되는 대로 안내드리겠습니다.">
+            Reception details will be added once the final plan is confirmed.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <span class="card-number">03</span>
+          <h3 data-en="Dress Code" data-ko="복장 안내">Dress Code</h3>
+          <p data-en="Dress code guidance will be added here."
+             data-ko="복장 관련 안내는 추후 이곳에 추가할 예정입니다.">
+            Dress code guidance will be added here.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="schedule" class="section alt-section">
+      <div class="section-heading">
+        <p class="eyebrow" data-en="WEDDING DAY" data-ko="결혼식 당일">WEDDING DAY</p>
+        <h2 data-en="Schedule" data-ko="일정">Schedule</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-row">
+          <span class="timeline-time">TBD</span>
+          <div>
+            <h3 data-en="Guest Arrival" data-ko="하객 도착">Guest Arrival</h3>
+            <p data-en="Please arrive early enough to get settled before the ceremony."
+               data-ko="예식 시작 전 여유 있게 도착해 주시면 감사하겠습니다.">
+              Please arrive early enough to get settled before the ceremony.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-row">
+          <span class="timeline-time">TBD</span>
+          <div>
+            <h3 data-en="Traditional Wedding Ceremony" data-ko="전통혼례">Traditional Wedding Ceremony</h3>
+            <p data-en="Korean traditional wedding ceremony at Lotte World."
+               data-ko="롯데월드 전통혼례장에서 전통혼례가 진행됩니다.">
+              Korean traditional wedding ceremony at Lotte World.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-row">
+          <span class="timeline-time">TBD</span>
+          <div>
+            <h3 data-en="Reception" data-ko="피로연">Reception</h3>
+            <p data-en="Reception details coming soon."
+               data-ko="피로연 상세 일정은 추후 안내드리겠습니다.">
+              Reception details coming soon.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="getting-here" class="section getting-here-section">
+      <div class="section-heading">
+        <p class="eyebrow" data-en="GETTING HERE" data-ko="오시는 길">GETTING HERE</p>
+        <h2 data-en="Finding the wedding venue." data-ko="예식장 찾아오시는 길">Finding the wedding venue.</h2>
+        <p class="section-intro"
+           data-en="Lotte World is a large complex, so please allow extra time. The wedding venue is inside the Lotte World Folk Museum area on the 3rd floor."
+           data-ko="롯데월드 단지가 넓어 내부 길찾기가 다소 복잡할 수 있습니다. 여유 있게 도착해 주세요. 전통혼례장은 롯데월드 민속박물관 3층에 있습니다.">
+          Lotte World is a large complex, so please allow extra time. The wedding venue is inside the Lotte World Folk Museum area on the 3rd floor.
+        </p>
+      </div>
+
+      <div class="venue-location-grid">
+        <div class="venue-address-card">
+          <p class="eyebrow small" data-en="DESTINATION" data-ko="목적지">DESTINATION</p>
+          <h3 data-en="Lotte World Folk Museum · Traditional Wedding"
+              data-ko="롯데월드 민속박물관 · 전통혼례장">
+            Lotte World Folk Museum · Traditional Wedding
+          </h3>
+          <p class="address-main"
+             data-en="240 Olympic-ro, Songpa-gu, Seoul, South Korea"
+             data-ko="서울특별시 송파구 올림픽로 240">
+            240 Olympic-ro, Songpa-gu, Seoul, South Korea
+          </p>
+          <p class="muted"
+             data-en="Lotte World Folk Museum, 3rd Floor"
+             data-ko="롯데월드 민속박물관 3층">
+            Lotte World Folk Museum, 3rd Floor
+          </p>
+
+          <div class="map-buttons">
+            <a class="map-button"
+               href="https://www.google.com/maps/search/?api=1&query=Lotte+World+Folk+Museum+240+Olympic-ro+Songpa-gu+Seoul"
+               target="_blank" rel="noopener"
+               data-en="Google Maps" data-ko="Google 지도">Google Maps</a>
+
+            <a class="map-button"
+               href="https://map.naver.com/p/search/%EB%A1%AF%EB%8D%B0%EC%9B%94%EB%93%9C%20%EB%AF%BC%EC%86%8D%EB%B0%95%EB%AC%BC%EA%B4%80"
+               target="_blank" rel="noopener"
+               data-en="Naver Map" data-ko="네이버 지도">Naver Map</a>
+
+            <a class="map-button"
+               href="https://map.kakao.com/?q=%EB%A1%AF%EB%8D%B0%EC%9B%94%EB%93%9C%20%EB%AF%BC%EC%86%8D%EB%B0%95%EB%AC%BC%EA%B4%80"
+               target="_blank" rel="noopener"
+               data-en="Kakao Map" data-ko="카카오맵">Kakao Map</a>
+          </div>
+        </div>
+
+        <div class="embedded-map">
+          <iframe
+            title="Map to Lotte World Folk Museum"
+            src="https://www.google.com/maps?q=Lotte%20World%20Folk%20Museum%2C%20240%20Olympic-ro%2C%20Songpa-gu%2C%20Seoul&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="subway-feature">
+        <div class="subway-heading">
+          <p class="eyebrow small" data-en="RECOMMENDED" data-ko="추천 이동 방법">RECOMMENDED</p>
+          <h3 data-en="Subway to Jamsil Station" data-ko="지하철로 잠실역까지">Subway to Jamsil Station</h3>
+          <p data-en="Take Line 2 or Line 8 to Jamsil Station. Use EXIT 4."
+             data-ko="지하철 2호선 또는 8호선을 타고 잠실역에서 하차한 후 반드시 4번 출구 방향으로 이동해 주세요.">
+            Take Line 2 or Line 8 to Jamsil Station. Use EXIT 4.
+          </p>
+        </div>
+
+        <div class="subway-badges">
+          <div class="subway-line line2">
+            <span class="line-circle">2</span>
+            <div>
+              <strong data-en="Line 2" data-ko="2호선">Line 2</strong>
+              <small data-en="Jamsil Station" data-ko="잠실역">Jamsil Station</small>
+            </div>
+          </div>
+          <div class="subway-or" data-en="OR" data-ko="또는">OR</div>
+          <div class="subway-line line8">
+            <span class="line-circle">8</span>
+            <div>
+              <strong data-en="Line 8" data-ko="8호선">Line 8</strong>
+              <small data-en="Jamsil Station" data-ko="잠실역">Jamsil Station</small>
+            </div>
+          </div>
+          <div class="exit-badge">
+            <span data-en="EXIT" data-ko="출구">EXIT</span>
+            <strong>4</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="indoor-route">
+        <div class="section-heading route-heading">
+          <p class="eyebrow" data-en="FROM JAMSIL STATION" data-ko="잠실역에서 예식장까지">FROM JAMSIL STATION</p>
+          <h2 data-en="Follow these steps after Exit 4." data-ko="4번 출구부터 이렇게 찾아오세요.">
+            Follow these steps after Exit 4.
+          </h2>
+          <p class="section-intro"
+             data-en="These steps follow Lotte World's official walking directions to the traditional wedding venue."
+             data-ko="아래 안내는 롯데월드 전통혼례장 공식 오시는 길을 기준으로 정리했습니다.">
+            These steps follow Lotte World's official walking directions to the traditional wedding venue.
+          </p>
+        </div>
+
+        <div class="route-steps">
+          <article class="route-step">
+            <div class="route-number">1</div>
+            <div class="route-icon">🚇</div>
+            <div>
+              <h3 data-en="Jamsil Station → Exit 4" data-ko="잠실역 → 4번 출구">Jamsil Station → Exit 4</h3>
+              <p data-en="From Jamsil Station, follow signs for Exit 4. From the Exit 4 area, go straight toward the underground Lotte Mart Zettaplex."
+                 data-ko="잠실역에서 4번 출구 방향 표지판을 따라 이동합니다. 4번 출구 쪽에서 지하 롯데마트 제타플렉스 방향으로 직진하세요.">
+                From Jamsil Station, follow signs for Exit 4. From the Exit 4 area, go straight toward the underground Lotte Mart Zettaplex.
+              </p>
+            </div>
+          </article>
+
+          <div class="route-connector">↓</div>
+
+          <article class="route-step">
+            <div class="route-number">2</div>
+            <div class="route-icon">➡️</div>
+            <div>
+              <h3 data-en="Follow Folk Museum / Lotte Mart signs" data-ko="민속박물관·롯데마트 방향으로 직진">
+                Follow Folk Museum / Lotte Mart signs
+              </h3>
+              <p data-en="Continue straight, following signs toward the Folk Museum and Lotte Mart. Do not follow the general Lotte World Adventure entrance if it takes you away from the Folk Museum signs."
+                 data-ko="민속박물관과 롯데마트 방향 표지판을 따라 계속 직진합니다. 민속박물관 표지판과 다른 방향의 롯데월드 어드벤처 입구로 빠지지 않도록 주의해 주세요.">
+                Continue straight, following signs toward the Folk Museum and Lotte Mart.
+              </p>
+            </div>
+          </article>
+
+          <div class="route-connector">↓</div>
+
+          <article class="route-step">
+            <div class="route-number">3</div>
+            <div class="route-icon">↰</div>
+            <div>
+              <h3 data-en="Turn left near CJ Gourmet Bridge" data-ko="CJ 고메브릿지 근처에서 좌회전">
+                Turn left near CJ Gourmet Bridge
+              </h3>
+              <p data-en="When you reach the area near CJ Gourmet Bridge, turn left toward the main gate."
+                 data-ko="CJ 고메브릿지가 보이는 부근에서 정문 방향으로 좌회전합니다.">
+                When you reach the area near CJ Gourmet Bridge, turn left toward the main gate.
+              </p>
+            </div>
+          </article>
+
+          <div class="route-connector">↓</div>
+
+          <article class="route-step">
+            <div class="route-number">4</div>
+            <div class="route-icon">🎡</div>
+            <div>
+              <h3 data-en="Pass Lotty & Lorry" data-ko="로티·로리 조형물을 지나 이동">
+                Pass Lotty & Lorry
+              </h3>
+              <p data-en="You will see the Lotte World characters Lotty and Lorry. Pass them and continue around toward the back, following signs for the Folk Museum."
+                 data-ko="롯데월드 캐릭터 로티와 로리 조형물이 보이면 지나서 뒤쪽으로 돌아 민속박물관 방향 표지판을 따라 이동합니다.">
+                You will see the Lotte World characters Lotty and Lorry. Pass them and continue around toward the back.
+              </p>
+            </div>
+          </article>
+
+          <div class="route-connector">↓</div>
+
+          <article class="route-step route-step-final">
+            <div class="route-number">5</div>
+            <div class="route-icon">🛗</div>
+            <div>
+              <h3 data-en="Elevator → 3rd Floor" data-ko="엘리베이터 → 3층">
+                Elevator → 3rd Floor
+              </h3>
+              <p data-en="Take the Folk Museum elevator to the 3rd floor. This brings you to the Folk Museum / traditional restaurant area where the traditional wedding venue is located."
+                 data-ko="민속박물관 엘리베이터를 타고 3층으로 올라오세요. 3층 민속박물관·저자거리 전통식당 구역에 전통혼례장이 있습니다.">
+                Take the Folk Museum elevator to the 3rd floor. This brings you to the Folk Museum / traditional restaurant area where the traditional wedding venue is located.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="arrival-tip">
+          <strong data-en="Important:" data-ko="중요:">Important:</strong>
+          <span data-en=" Because the route inside Lotte World can be confusing, we recommend arriving 20–30 minutes earlier than you normally would."
+                data-ko=" 롯데월드 내부 길찾기가 다소 복잡할 수 있으므로 평소보다 20–30분 정도 여유 있게 도착하시는 것을 권장드립니다.">
+            Because the route inside Lotte World can be confusing, we recommend arriving 20–30 minutes earlier than you normally would.
+          </span>
+        </div>
+      </div>
+
+      <div class="arrival-grid">
+        <article class="arrival-card">
+          <span class="card-number">01</span>
+          <h3 data-en="By Taxi" data-ko="택시">By Taxi</h3>
+          <p data-en="For the least confusion, search for the Folk Museum rather than only 'Lotte World.' Show the Korean destination below to your driver."
+             data-ko="혼동을 줄이려면 '롯데월드'만 검색하기보다 '롯데월드 민속박물관'을 목적지로 검색해 주세요. 기사님께 아래 목적지를 보여주시면 편리합니다.">
+            For the least confusion, search for the Folk Museum rather than only “Lotte World.”
+          </p>
+          <div class="taxi-card">
+            <strong>롯데월드 민속박물관 전통혼례장</strong>
+            <span>서울특별시 송파구 올림픽로 240</span>
+          </div>
+          <p class="muted"
+             data-en="Naver Map and Kakao Map are generally more useful than Google Maps for detailed navigation in Korea."
+             data-ko="한국에서는 상세 길찾기에 네이버 지도 또는 카카오맵을 이용하시면 편리합니다.">
+            Naver Map and Kakao Map are generally more useful than Google Maps for detailed navigation in Korea.
+          </p>
+        </article>
+
+        <article class="arrival-card">
+          <span class="card-number">02</span>
+          <h3 data-en="By Car / Parking" data-ko="자가용 / 주차">By Car / Parking</h3>
+          <p data-en="Wedding guests may use parking throughout the Lotte World complex."
+             data-ko="예식 하객은 롯데월드 단지 내 주차장을 이용하실 수 있습니다.">
+            Wedding guests may use parking throughout the Lotte World complex.
+          </p>
+          <p data-en="Lotte World lists 2 hours of complimentary parking for traditional-wedding guests."
+             data-ko="롯데월드 전통혼례 하객은 2시간 무료 주차가 가능합니다.">
+            Lotte World lists 2 hours of complimentary parking for traditional-wedding guests.
+          </p>
+          <p class="muted"
+             data-en="Please follow the wedding venue's instructions for parking validation on the day."
+             data-ko="당일 예식장 안내에 따라 주차 인증을 받아 주세요.">
+            Please follow the wedding venue's instructions for parking validation on the day.
+          </p>
+        </article>
+
+        <article class="arrival-card">
+          <span class="card-number">03</span>
+          <h3 data-en="Save This Before You Go" data-ko="출발 전 저장해 주세요">Save This Before You Go</h3>
+          <p data-en="International guests: screenshot this directions page and the Korean venue name before leaving your hotel."
+             data-ko="해외 하객분들은 호텔에서 출발하기 전에 이 페이지와 한글 예식장 이름을 캡처해 두시는 것을 추천드립니다.">
+            International guests: screenshot this directions page and the Korean venue name before leaving your hotel.
+          </p>
+          <div class="taxi-card">
+            <strong>롯데월드 민속박물관</strong>
+            <span>잠실역 4번 출구 → 민속박물관 → 3층</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+
+    <section id="us-reception" class="section us-reception-section">
+      <div class="section-heading">
+        <p class="eyebrow" data-en="CELEBRATING IN WISCONSIN" data-ko="위스콘신에서 함께하는 축하 자리">
+          CELEBRATING IN WISCONSIN
+        </p>
+        <h2 data-en="U.S. Reception" data-ko="미국 피로연">U.S. Reception</h2>
+        <p class="section-intro"
+           data-en="For family and friends who may not be able to make the trip to Korea, we are planning a separate celebration in Wisconsin before our wedding."
+           data-ko="한국 결혼식에 참석하기 어려운 가족과 친구분들을 위해 결혼식 전 위스콘신에서 별도의 축하 자리를 계획하고 있습니다.">
+          For family and friends who may not be able to make the trip to Korea, we are planning a separate celebration in Wisconsin before our wedding.
+        </p>
+      </div>
+
+      <div class="us-reception-card">
+        <div class="us-reception-status">
+          <span class="status-dot"></span>
+          <span data-en="DETAILS IN PROGRESS" data-ko="세부사항 준비 중">DETAILS IN PROGRESS</span>
+        </div>
+
+        <div class="us-reception-details">
+          <div>
+            <p class="eyebrow small" data-en="LOCATION" data-ko="지역">LOCATION</p>
+            <h3 data-en="Wisconsin" data-ko="위스콘신">Wisconsin</h3>
+            <p class="muted"
+               data-en="Exact venue to be announced."
+               data-ko="정확한 장소는 추후 안내드리겠습니다.">
+              Exact venue to be announced.
+            </p>
+          </div>
+
+          <div>
+            <p class="eyebrow small" data-en="DATE" data-ko="날짜">DATE</p>
+            <h3 data-en="To Be Announced" data-ko="추후 안내">To Be Announced</h3>
+            <p class="muted"
+               data-en="We are considering a date before the wedding in Korea."
+               data-ko="한국 결혼식 전 일정으로 계획하고 있습니다.">
+              We are considering a date before the wedding in Korea.
+            </p>
+          </div>
+
+          <div>
+            <p class="eyebrow small" data-en="WHO IT'S FOR" data-ko="초대 대상">WHO IT'S FOR</p>
+            <h3 data-en="Family & Friends" data-ko="가족과 친구들">Family & Friends</h3>
+            <p class="muted"
+               data-en="Especially for guests who may not be able to travel to Seoul."
+               data-ko="특히 서울까지 여행하기 어려운 분들을 위한 자리입니다.">
+              Especially for guests who may not be able to travel to Seoul.
+            </p>
+          </div>
+        </div>
+
+        <div class="us-reception-note">
+          <p data-en="We will share the final date, location, schedule, and RSVP information here once everything is confirmed."
+             data-ko="날짜, 장소, 일정, 참석 여부 회신 방법이 확정되는 대로 이곳에 안내드리겠습니다.">
+            We will share the final date, location, schedule, and RSVP information here once everything is confirmed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="travel" class="section split-section">
+      <div>
+        <p class="eyebrow" data-en="TRAVEL" data-ko="여행 안내">TRAVEL</p>
+        <h2 data-en="Welcome to Seoul." data-ko="서울에서 만나요.">Welcome to Seoul.</h2>
+        <p data-en="We know many of our guests will be traveling a long way to celebrate with us. We’ll use this section to make your trip to Korea as easy as possible."
+           data-ko="멀리서 저희의 결혼을 축하하기 위해 와주시는 분들을 위해 한국 여행에 필요한 정보를 이곳에 정리할 예정입니다.">
+          We know many of our guests will be traveling a long way to celebrate with us.
+          We’ll use this section to make your trip to Korea as easy as possible.
+        </p>
+      </div>
+
+      <div class="travel-list">
+        <div>
+          <span>01</span>
+          <h3 data-en="Getting to Seoul" data-ko="서울 오는 방법">Getting to Seoul</h3>
+          <p data-en="Airport transportation from Incheon International Airport."
+             data-ko="인천국제공항에서 서울까지 이동하는 방법을 안내할 예정입니다.">
+            Airport transportation from Incheon International Airport.
+          </p>
+        </div>
+        <div>
+          <span>02</span>
+          <h3 data-en="Getting Around" data-ko="서울 교통">Getting Around</h3>
+          <p data-en="Subway, taxi, and navigation tips for international guests."
+             data-ko="지하철, 택시, 길찾기 등 서울 내 이동 정보를 안내할 예정입니다.">
+            Subway, taxi, and navigation tips for international guests.
+          </p>
+        </div>
+        <div>
+          <span>03</span>
+          <h3 data-en="Before You Arrive" data-ko="출국 전 준비">Before You Arrive</h3>
+          <p data-en="Helpful travel apps, payments, connectivity, and practical Korea tips."
+             data-ko="여행 필수 앱, 결제, 인터넷 사용 등 한국 여행 팁을 정리할 예정입니다.">
+            Helpful travel apps, payments, connectivity, and practical Korea tips.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="dietary" class="section dietary-section">
+      <div class="section-heading">
+        <p class="eyebrow" data-en="DIETARY NEEDS IN KOREA" data-ko="한국에서의 식이 제한 안내">
+          DIETARY NEEDS IN KOREA
+        </p>
+        <h2 data-en="Gluten-free & food allergies" data-ko="글루텐 프리 및 음식 알레르기">
+          Gluten-free & food allergies
+        </h2>
+        <p class="section-intro"
+           data-en="If you have celiac disease, a food allergy, or another dietary restriction, please tell us when you RSVP so we can plan appropriate options for our wedding events."
+           data-ko="셀리악병, 음식 알레르기 또는 기타 식이 제한이 있으신 경우, 예식 음식 준비에 참고할 수 있도록 참석 여부 회신 시 꼭 알려주세요.">
+          If you have celiac disease, a food allergy, or another dietary restriction, please tell us when you RSVP so we can plan appropriate options for our wedding events.
+        </p>
+      </div>
+
+      <div class="dietary-grid">
+        <article class="dietary-card">
+          <span class="card-number">01</span>
+          <h3 data-en="Gluten-free Korean food is possible" data-ko="한국 음식도 글루텐 프리가 가능합니다">
+            Gluten-free Korean food is possible
+          </h3>
+          <p data-en="Rice, plain grilled meat, seafood, vegetables, and other simple foods can be naturally gluten-free."
+             data-ko="쌀, 양념하지 않은 구운 고기, 해산물, 채소 등 비교적 단순한 음식은 자연적으로 글루텐이 없는 경우가 많습니다.">
+            Rice, plain grilled meat, seafood, vegetables, and other simple foods can be naturally gluten-free.
+          </p>
+        </article>
+
+        <article class="dietary-card">
+          <span class="card-number">02</span>
+          <h3 data-en="Watch for sauces & marinades" data-ko="양념과 소스는 확인이 필요합니다">
+            Watch for sauces & marinades
+          </h3>
+          <p data-en="Regular soy sauce is usually made with wheat, and some gochujang, marinades, soups, noodles, and fried foods may also contain wheat or barley."
+             data-ko="일반 간장은 보통 밀을 포함하며, 일부 고추장, 양념, 국물, 면 요리, 튀김 음식에도 밀이나 보리가 들어갈 수 있습니다.">
+            Regular soy sauce is usually made with wheat, and some gochujang, marinades, soups, noodles, and fried foods may also contain wheat or barley.
+          </p>
+        </article>
+
+        <article class="dietary-card">
+          <span class="card-number">03</span>
+          <h3 data-en="Celiac disease needs extra care" data-ko="셀리악병은 더욱 세심한 확인이 필요합니다">
+            Celiac disease needs extra care
+          </h3>
+          <p data-en="For guests with celiac disease or severe allergies, cross-contact can be an additional concern. Please let us know clearly in your RSVP."
+             data-ko="셀리악병이나 심한 음식 알레르기가 있는 경우 조리 과정 중 교차접촉도 주의해야 합니다. 참석 여부 회신 시 자세히 알려주세요.">
+            For guests with celiac disease or severe allergies, cross-contact can be an additional concern. Please let us know clearly in your RSVP.
+          </p>
+        </article>
+      </div>
+
+      <div class="dietary-note">
+        <strong data-en="Our recommendation:" data-ko="저희의 권장사항:">Our recommendation:</strong>
+        <span data-en=" You do not need to avoid Korean food entirely, but guests who require a strict gluten-free diet should plan ahead, ask about sauces and marinades, and use restaurants that can clearly confirm ingredients and preparation practices."
+              data-ko=" 한국 음식을 완전히 피하실 필요는 없지만, 엄격한 글루텐 프리 식단이 필요한 분들은 미리 계획하시고 소스와 양념의 재료를 확인하며, 조리 재료와 방법을 명확하게 안내할 수 있는 식당을 이용하시는 것을 권장드립니다.">
+          You do not need to avoid Korean food entirely, but guests who require a strict gluten-free diet should plan ahead, ask about sauces and marinades, and use restaurants that can clearly confirm ingredients and preparation practices.
+        </span>
+      </div>
+    </section>
+
+    <section id="hotels" class="section alt-section">
+      <div class="section-heading">
+        <p class="eyebrow" data-en="WHERE TO STAY" data-ko="숙박 안내">WHERE TO STAY</p>
+        <h2 data-en="Hotels" data-ko="호텔 추천">Hotels</h2>
+        <p class="section-intro"
+           data-en="We’ll recommend options in both Jamsil and Gangnam, including different price ranges."
+           data-ko="잠실과 강남 지역을 중심으로 다양한 가격대의 호텔을 추천드릴 예정입니다.">
+          We’ll recommend options in both Jamsil and Gangnam, including different price ranges.
+        </p>
+      </div>
+
+      <div class="hotel-grid">
+        <article>
+          <p class="eyebrow small" data-en="CLOSEST TO THE WEDDING" data-ko="예식장과 가장 가까운 지역">CLOSEST TO THE WEDDING</p>
+          <h3 data-en="Jamsil" data-ko="잠실">Jamsil</h3>
+          <p data-en="Best for guests who want to stay close to the wedding venue."
+             data-ko="예식장과 가까운 곳에서 편하게 머물고 싶은 분들께 가장 적합합니다.">
+            Best for guests who want to stay close to the wedding venue.
+          </p>
+          <a href="#" class="text-link disabled-link" data-en="Hotel list coming soon" data-ko="호텔 목록 준비 중">
+            Hotel list coming soon
+          </a>
+        </article>
+
+        <article>
+          <p class="eyebrow small" data-en="CENTRAL & LIVELY" data-ko="교통과 즐길 거리가 많은 지역">CENTRAL & LIVELY</p>
+          <h3 data-en="Gangnam" data-ko="강남">Gangnam</h3>
+          <p data-en="A convenient option with restaurants, nightlife, shopping, and easy transportation."
+             data-ko="맛집, 쇼핑, 교통이 편리한 지역을 선호하는 분들께 좋은 선택입니다.">
+            A convenient option with restaurants, nightlife, shopping, and easy transportation.
+          </p>
+          <a href="#" class="text-link disabled-link" data-en="Hotel list coming soon" data-ko="호텔 목록 준비 중">
+            Hotel list coming soon
+          </a>
+        </article>
+      </div>
+    </section>
+
+
+    <section id="seoul" class="section seoul-section">
+      <div class="section-heading">
+        <p class="eyebrow" data-en="SEOUL GUIDE" data-ko="서울 가이드">SEOUL GUIDE</p>
+        <h2 data-en="Make a trip of it." data-ko="서울을 함께 즐겨주세요.">Make a trip of it.</h2>
+        <p class="section-intro"
+           data-en="Our favorite places, food, cafés, neighborhoods, and things to do will be added here."
+           data-ko="저희가 좋아하는 맛집, 카페, 동네, 관광지 등을 이곳에 소개할 예정입니다.">
+          Our favorite places, food, cafés, neighborhoods, and things to do will be added here.
+        </p>
+      </div>
+
+      <div class="guide-grid">
+        <div><span>01</span><h3 data-en="Eat" data-ko="맛집">Eat</h3><p data-en="Korean food recommendations." data-ko="한국 음식과 맛집 추천.">Korean food recommendations.</p></div>
+        <div><span>02</span><h3 data-en="Explore" data-ko="관광">Explore</h3><p data-en="Neighborhoods and attractions." data-ko="서울의 동네와 관광 명소.">Neighborhoods and attractions.</p></div>
+        <div><span>03</span><h3 data-en="Coffee" data-ko="카페">Coffee</h3><p data-en="Favorite cafés and desserts." data-ko="추천 카페와 디저트.">Favorite cafés and desserts.</p></div>
+        <div><span>04</span><h3 data-en="Shop" data-ko="쇼핑">Shop</h3><p data-en="Shopping and souvenirs." data-ko="쇼핑과 기념품 추천.">Shopping and souvenirs.</p></div>
+      </div>
+    </section>
+
+    <section id="faq" class="section alt-section">
+      <div class="section-heading">
+        <p class="eyebrow" data-en="FAQ" data-ko="자주 묻는 질문">FAQ</p>
+        <h2 data-en="Good to know." data-ko="미리 알아두면 좋아요.">Good to know.</h2>
+      </div>
+
+      <div class="faq-list">
+        <details>
+          <summary data-en="What should I wear?" data-ko="어떤 옷을 입으면 되나요?">What should I wear?</summary>
+          <p data-en="Dress code details will be added once finalized."
+             data-ko="복장 안내는 확정되는 대로 업데이트할 예정입니다.">
+            Dress code details will be added once finalized.
+          </p>
+        </details>
+
+        <details>
+          <summary data-en="What is a Korean traditional wedding like?"
+                   data-ko="한국 전통혼례는 어떻게 진행되나요?">
+            What is a Korean traditional wedding like?
+          </summary>
+          <p data-en="We’ll add a short guide for guests attending a Korean traditional wedding for the first time."
+             data-ko="전통혼례가 익숙하지 않은 분들을 위해 간단한 설명을 추가할 예정입니다.">
+            We’ll add a short guide for guests attending a Korean traditional wedding for the first time.
+          </p>
+        </details>
+
+        <details>
+          <summary data-en="Where should I stay?" data-ko="어디에 숙박하는 것이 좋나요?">Where should I stay?</summary>
+          <p data-en="Jamsil is closest to the venue, while Gangnam is another convenient option. Hotel recommendations are coming soon."
+             data-ko="잠실이 예식장과 가장 가깝고, 강남도 편리한 선택입니다. 호텔 추천은 추후 추가할 예정입니다.">
+            Jamsil is closest to the venue, while Gangnam is another convenient option.
+            Hotel recommendations are coming soon.
+          </p>
+        </details>
+
+        <details>
+          <summary data-en="I have a food allergy or dietary restriction. What should I do?"
+                   data-ko="음식 알레르기나 식이 제한이 있습니다. 어떻게 알려드리면 되나요?">
+            I have a food allergy or dietary restriction. What should I do?
+          </summary>
+          <p data-en="Please include it in your RSVP. For celiac disease or a severe allergy, tell us specifically so we can distinguish it from a dietary preference and plan accordingly."
+             data-ko="참석 여부 회신 시 식이 제한 사항을 적어주세요. 셀리악병이나 심한 음식 알레르기가 있는 경우 단순한 식이 선호와 구분하여 준비할 수 있도록 구체적으로 알려주세요.">
+            Please include it in your RSVP. For celiac disease or a severe allergy, tell us specifically so we can distinguish it from a dietary preference and plan accordingly.
+          </p>
+        </details>
+
+        <details>
+          <summary data-en="Will the website be available in Korean and English?"
+                   data-ko="웹사이트는 한국어와 영어로 제공되나요?">
+            Will the website be available in Korean and English?
+          </summary>
+          <p data-en="Yes. Use the EN / 한국어 switch at the top of the page."
+             data-ko="네. 페이지 상단의 EN / 한국어 버튼으로 언어를 변경할 수 있습니다.">
+            Yes. Use the EN / 한국어 switch at the top of the page.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <section id="rsvp" class="section rsvp-section">
+      <p class="eyebrow" data-en="RSVP" data-ko="참석 여부">RSVP</p>
+      <h2 data-en="We hope you can celebrate with us." data-ko="함께 축하해 주시면 기쁘겠습니다.">
+        We hope you can celebrate with us.
+      </h2>
+      <p data-en="Online RSVP will open at a later date. When it opens, we will also ask about food allergies and dietary restrictions."
+         data-ko="온라인 참석 여부 회신은 추후 오픈할 예정이며, 음식 알레르기와 식이 제한 사항도 함께 확인할 예정입니다.">
+        Online RSVP will open at a later date. When it opens, we will also ask about food allergies and dietary restrictions.
+      </p>
+
+      <div class="rsvp-preview">
+        <p class="eyebrow small" data-en="RSVP WILL INCLUDE" data-ko="참석 여부 회신 시 확인할 내용">
+          RSVP WILL INCLUDE
+        </p>
+
+        <div class="rsvp-question-grid">
+          <div>
+            <span class="question-number">01</span>
+            <strong data-en="Which event(s) will you attend?" data-ko="어떤 행사에 참석하시나요?">
+              Which event(s) will you attend?
+            </strong>
+            <small data-en="Korea wedding · U.S. reception" data-ko="한국 결혼식 · 미국 피로연">
+              Korea wedding · U.S. reception
+            </small>
+          </div>
+
+          <div>
+            <span class="question-number">02</span>
+            <strong data-en="Food allergies or dietary restrictions?" data-ko="음식 알레르기 또는 식이 제한이 있나요?">
+              Food allergies or dietary restrictions?
+            </strong>
+            <small data-en="Celiac / gluten-free · Vegetarian · Vegan · Dairy-free · Nut allergy · Other"
+                   data-ko="셀리악/글루텐 프리 · 채식 · 비건 · 유제품 제한 · 견과류 알레르기 · 기타">
+              Celiac / gluten-free · Vegetarian · Vegan · Dairy-free · Nut allergy · Other
+            </small>
+          </div>
+
+          <div>
+            <span class="question-number">03</span>
+            <strong data-en="Anything we should know?" data-ko="추가로 알려주실 내용이 있나요?">
+              Anything we should know?
+            </strong>
+            <small data-en="Guests with celiac disease or severe allergies can provide additional details."
+                   data-ko="셀리악병이나 심한 알레르기가 있는 경우 자세한 내용을 적어주실 수 있습니다.">
+              Guests with celiac disease or severe allergies can provide additional details.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <button class="primary-button" type="button" disabled data-en="RSVP Coming Soon" data-ko="참석 여부 회신 준비 중">
+        RSVP Coming Soon
+      </button>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-monogram">H & J</div>
+    <p data-en="Hyung Joo & Jenna · June 26, 2027 · Seoul, Korea"
+       data-ko="형주 & 제나 · 2027년 6월 26일 · 서울">
+      Hyung Joo & Jenna · June 26, 2027 · Seoul, Korea
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
