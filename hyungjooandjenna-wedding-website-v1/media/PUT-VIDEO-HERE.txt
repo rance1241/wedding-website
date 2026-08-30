@@ -1,0 +1,16 @@
+When your video is ready:
+
+1. Rename the MP4 file to:
+   wedding-film.mp4
+
+2. Upload it into this media folder.
+
+Final path:
+media/wedding-film.mp4
+
+The website will automatically replace the placeholder with the video player.
+
+Recommended:
+- MP4 / H.264
+- 1080p is plenty for the website
+- Keep the file reasonably compressed for faster loading

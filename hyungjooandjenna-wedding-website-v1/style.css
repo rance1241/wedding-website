@@ -1,0 +1,1445 @@
+
+:root {
+  --ivory: #F7F3EC;
+  --soft-white: #FFFDF8;
+  --charcoal: #2E2B27;
+  --muted: #746F67;
+  --sage: #8F9B86;
+  --beige: #D8CEC1;
+  --line: #D9D2C8;
+  --overlay: rgba(36, 33, 29, .28);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--charcoal);
+  font-family: Georgia, "Times New Roman", "Apple SD Gothic Neo", "Noto Serif KR", serif;
+  line-height: 1.65;
+}
+
+body.menu-open { overflow: hidden; }
+
+a { color: inherit; }
+button { font: inherit; }
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 76px;
+  display: grid;
+  grid-template-columns: 120px 1fr 120px;
+  align-items: center;
+  gap: 20px;
+  padding: 0 5vw;
+  background: rgba(247, 243, 236, .93);
+  border-bottom: 1px solid rgba(217, 210, 200, .75);
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  text-decoration: none;
+  font-size: 1.2rem;
+  letter-spacing: .16em;
+  justify-self: start;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+nav a {
+  text-decoration: none;
+  font-family: Arial, "Apple SD Gothic Neo", sans-serif;
+  font-size: .72rem;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+nav a:hover { opacity: .58; }
+
+.language-switch {
+  justify-self: end;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-family: Arial, "Apple SD Gothic Neo", sans-serif;
+  font-size: .74rem;
+}
+
+.lang-option {
+  border: 0;
+  background: transparent;
+  padding: 6px 2px;
+  cursor: pointer;
+  opacity: .45;
+}
+
+.lang-option.active {
+  opacity: 1;
+  border-bottom: 1px solid var(--charcoal);
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin: 6px 0;
+  background: var(--charcoal);
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  margin-top: 0;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  min-height: 100vh;
+}
+
+.placeholder-photo {
+  background:
+    linear-gradient(rgba(255,255,255,.10), rgba(255,255,255,.10)),
+    linear-gradient(135deg, #c9c5be 0%, #aaa59d 45%, #d7d0c6 100%);
+}
+
+.placeholder-inner {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  display: grid;
+  place-items: center;
+  color: rgba(255,255,255,.88);
+  font-family: Arial, "Apple SD Gothic Neo", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  font-size: .75rem;
+}
+
+.hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(28,25,22,.18), rgba(28,25,22,.38));
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  padding: 120px 20px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  font-family: Arial, "Apple SD Gothic Neo", sans-serif;
+  font-size: .72rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+.eyebrow.light { color: rgba(255,255,255,.88); }
+.eyebrow.small { font-size: .64rem; }
+
+h1, h2, h3 {
+  font-weight: 400;
+  margin-top: 0;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(3.6rem, 9vw, 8rem);
+  line-height: .88;
+  letter-spacing: -.03em;
+}
+
+h1 span { display: block; }
+h1 em {
+  display: block;
+  margin: 12px 0;
+  font-size: .56em;
+  font-weight: 400;
+}
+
+.hero-divider {
+  width: 72px;
+  height: 1px;
+  margin: 34px 0 22px;
+  background: rgba(255,255,255,.72);
+}
+
+.hero-date {
+  margin: 0;
+  font-family: Arial, "Apple SD Gothic Neo", sans-serif;
+  font-size: .74rem;
+  letter-spacing: .14em;
+}
+
+.scroll-link {
+  margin-top: 36px;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.countdown-section {
+  padding: 52px 7vw 58px;
+  text-align: center;
+  background: var(--soft-white);
+  border-bottom: 1px solid var(--line);
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: clamp(22px, 7vw, 90px);
+}
+
+.countdown div {
+  display: flex;
+  min-width: 70px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown strong {
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.countdown span {
+  margin-top: 10px;
+  font-family: Arial, "Apple SD Gothic Neo", sans-serif;
+  font-size: .68rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.section {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 120px 8vw;
+}
+
+.alt-section {
+  max-width: none;
+  background: var(--soft-white);
+}
+
+.section-heading {
+  max-width: 850px;
+  margin: 0 auto 64px;
+  text-align: center;
+}
+
+.section-heading h2,
+.story-copy h2,
+.split-section h2,
+.rsvp-section h2 {
+  margin-bottom: 24px;
+  font-size: clamp(2.6rem, 5vw, 5rem);
+  line-height: 1.04;
+  letter-spacing: -.025em;
+}
+
+.section-intro {
+  max-width: 680px;
+  margin: 0 auto;
+  color: var(--muted);
+}
+
+.story-section {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 9vw;
+  align-items: center;
+}
+
+.story-copy p { max-width: 560px; }
+.muted { color: var(--muted); }
+
+.story-photo {
+  min-height: 620px;
+}
+
+.venue {
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.info-card {
+  min-height: 290px;
+  padding: 34px 36px;
+  border-right: 1px solid var(--line);
+}
+
+.info-card:last-child { border-right: 0; }
+
+.card-number,
+.travel-list span,
+.guide-grid span {
+  font-family: Arial, sans-serif;
+  font-size: .7rem;
+  letter-spacing: .12em;
+  color: var(--sage);
+}
+
+.info-card h3,
+.travel-list h3,
+.hotel-grid h3,
+.guide-grid h3,
+.timeline h3 {
+  margin: 18px 0 12px;
+  font-size: 1.6rem;
+}
+
+.timeline {
+  max-width: 840px;
+  margin: 0 auto;
+  border-top: 1px solid var(--line);
+}
+
+.timeline-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 26px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline-time {
+  padding-top: 6px;
+  font-family: Arial, sans-serif;
+  font-size: .72rem;
+  letter-spacing: .12em;
+  color: var(--sage);
+}
+
+.timeline-row p { margin-bottom: 0; color: var(--muted); }
+
+.split-section {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 9vw;
+  align-items: start;
+}
+
+.split-section > div:first-child {
+  position: sticky;
+  top: 120px;
+}
+
+.travel-list > div {
+  padding: 0 0 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.travel-list p { color: var(--muted); }
+
+.hotel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.hotel-grid article {
+  padding: 42px;
+  border: 1px solid var(--line);
+  background: var(--ivory);
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 14px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--charcoal);
+  font-family: Arial, "Apple SD Gothic Neo", sans-serif;
+  font-size: .75rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.disabled-link {
+  pointer-events: none;
+  opacity: .45;
+}
+
+.photo-break {
+  min-height: 66vh;
+}
+
+.seoul-section { text-align: center; }
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.guide-grid > div {
+  padding: 36px 28px;
+  border-right: 1px solid var(--line);
+}
+
+.guide-grid > div:last-child { border-right: 0; }
+.guide-grid p { color: var(--muted); }
+
+.faq-list {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+details {
+  border-top: 1px solid var(--line);
+  padding: 22px 0;
+}
+
+details:last-child { border-bottom: 1px solid var(--line); }
+
+summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 1.18rem;
+}
+
+summary::-webkit-details-marker { display: none; }
+
+summary::after {
+  content: "+";
+  float: right;
+  color: var(--sage);
+}
+
+details[open] summary::after { content: "–"; }
+details p { color: var(--muted); max-width: 720px; }
+
+.rsvp-section {
+  max-width: 900px;
+  text-align: center;
+}
+
+.rsvp-section p:not(.eyebrow) { color: var(--muted); }
+
+.primary-button {
+  margin-top: 22px;
+  padding: 14px 24px;
+  border: 1px solid var(--charcoal);
+  background: transparent;
+  color: var(--charcoal);
+  font-family: Arial, "Apple SD Gothic Neo", sans-serif;
+  font-size: .74rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  opacity: .5;
+}
+
+footer {
+  padding: 60px 20px;
+  text-align: center;
+  background: var(--charcoal);
+  color: var(--ivory);
+}
+
+.footer-monogram {
+  margin-bottom: 12px;
+  font-size: 1.35rem;
+  letter-spacing: .14em;
+}
+
+footer p {
+  margin: 0;
+  font-family: Arial, "Apple SD Gothic Neo", sans-serif;
+  font-size: .7rem;
+  letter-spacing: .08em;
+  opacity: .76;
+}
+
+html[lang="ko"] body {
+  word-break: keep-all;
+}
+
+html[lang="ko"] nav a,
+html[lang="ko"] .eyebrow,
+html[lang="ko"] .hero-date,
+html[lang="ko"] .countdown span,
+html[lang="ko"] .text-link,
+html[lang="ko"] footer p {
+  letter-spacing: .04em;
+}
+
+@media (max-width: 1040px) {
+  .site-header {
+    grid-template-columns: 90px 1fr 100px;
+  }
+
+  nav { gap: 13px; }
+  nav a { font-size: .64rem; }
+
+  .info-card { padding: 30px 24px; }
+}
+
+@media (max-width: 820px) {
+  .site-header {
+    height: 68px;
+    grid-template-columns: 1fr auto auto;
+    padding: 0 22px;
+  }
+
+  .menu-toggle {
+    display: block;
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .language-switch {
+    grid-column: 3;
+    grid-row: 1;
+    margin-left: 6px;
+  }
+
+  nav {
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0;
+    padding-top: 46px;
+    background: var(--ivory);
+  }
+
+  nav.open { display: flex; }
+
+  nav a {
+    width: 100%;
+    padding: 16px 24px;
+    text-align: center;
+    font-size: .82rem;
+  }
+
+  .hero-overlay { padding-top: 110px; }
+
+  .countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .countdown div { min-width: 0; }
+
+  .section {
+    padding: 88px 7vw;
+  }
+
+  .story-section,
+  .split-section {
+    grid-template-columns: 1fr;
+    gap: 54px;
+  }
+
+  .split-section > div:first-child {
+    position: static;
+  }
+
+  .story-photo { min-height: 500px; }
+
+  .info-cards,
+  .hotel-grid,
+  .guide-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-card {
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .guide-grid > div {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .guide-grid > div:last-child { border-bottom: 0; }
+
+  .photo-break { min-height: 52vh; }
+}
+
+@media (max-width: 560px) {
+  h1 { font-size: clamp(3.2rem, 18vw, 5.4rem); }
+
+  .hero-date {
+    max-width: 280px;
+    line-height: 1.7;
+  }
+
+  .countdown-section { padding-left: 18px; padding-right: 18px; }
+  .countdown strong { font-size: 1.75rem; }
+  .countdown span { font-size: .58rem; letter-spacing: .08em; }
+
+  .timeline-row {
+    grid-template-columns: 72px 1fr;
+    gap: 16px;
+  }
+
+  .hotel-grid article { padding: 32px 26px; }
+}
+
+
+/* =========================
+   GETTING HERE / 오시는 길
+   ========================= */
+
+.getting-here-section {
+  max-width: none;
+  background: var(--ivory);
+}
+
+.venue-location-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  max-width: 1180px;
+  margin: 0 auto 72px;
+  border: 1px solid var(--line);
+  background: var(--soft-white);
+}
+
+.venue-address-card {
+  padding: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.venue-address-card h3 {
+  margin: 5px 0 14px;
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+.address-main {
+  margin-bottom: 3px;
+}
+
+.embedded-map {
+  min-height: 410px;
+  border-left: 1px solid var(--line);
+}
+
+.embedded-map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 410px;
+  border: 0;
+}
+
+.map-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 23px;
+}
+
+.map-button {
+  padding: 10px 13px;
+  border: 1px solid var(--charcoal);
+  color: var(--charcoal);
+  text-decoration: none;
+  font-family: Arial, "Apple SD Gothic Neo", sans-serif;
+  font-size: .68rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  transition: all .18s ease;
+}
+
+.map-button:hover {
+  background: var(--charcoal);
+  color: var(--ivory);
+}
+
+.subway-feature {
+  max-width: 980px;
+  margin: 0 auto 92px;
+  padding: 42px 48px;
+  background: var(--charcoal);
+  color: var(--ivory);
+  text-align: center;
+}
+
+.subway-feature .eyebrow {
+  color: var(--beige);
+}
+
+.subway-heading h3 {
+  margin-bottom: 8px;
+  font-size: 2rem;
+}
+
+.subway-heading p:last-child {
+  margin: 0 auto;
+  color: rgba(247,243,236,.78);
+}
+
+.subway-badges {
+  margin-top: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.subway-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 180px;
+  text-align: left;
+}
+
+.subway-line strong,
+.subway-line small {
+  display: block;
+}
+
+.subway-line small {
+  opacity: .7;
+  font-family: Arial, "Apple SD Gothic Neo", sans-serif;
+  font-size: .72rem;
+}
+
+.line-circle {
+  width: 49px;
+  height: 49px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.line2 .line-circle { background: #00A84D; }
+.line8 .line-circle { background: #E6186C; }
+
+.subway-or {
+  opacity: .48;
+  font-family: Arial, sans-serif;
+  font-size: .66rem;
+  letter-spacing: .12em;
+}
+
+.exit-badge {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-left: 12px;
+  padding: 9px 14px;
+  border: 1px solid rgba(247,243,236,.62);
+}
+
+.exit-badge span {
+  font-family: Arial, "Apple SD Gothic Neo", sans-serif;
+  font-size: .66rem;
+  letter-spacing: .12em;
+}
+
+.exit-badge strong {
+  font-family: Arial, sans-serif;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.indoor-route {
+  max-width: 960px;
+  margin: 0 auto 92px;
+}
+
+.route-heading {
+  margin-bottom: 45px;
+}
+
+.route-steps {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.route-step {
+  display: grid;
+  grid-template-columns: 52px 58px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 27px 30px;
+  border: 1px solid var(--line);
+  background: var(--soft-white);
+}
+
+.route-step-final {
+  border-color: var(--sage);
+}
+
+.route-number {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--sage);
+  color: var(--sage);
+  font-family: Arial, sans-serif;
+  font-size: .72rem;
+}
+
+.route-icon {
+  font-size: 1.55rem;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.route-step h3 {
+  margin: 0 0 7px;
+  font-size: 1.34rem;
+}
+
+.route-step p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.route-connector {
+  height: 30px;
+  display: grid;
+  place-items: center;
+  color: var(--sage);
+  font-size: 1.15rem;
+}
+
+.arrival-tip {
+  max-width: 850px;
+  margin: 28px auto 0;
+  padding: 18px 20px;
+  border-left: 3px solid var(--sage);
+  background: rgba(143,155,134,.12);
+}
+
+.arrival-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.arrival-card {
+  padding: 31px;
+  border-top: 1px solid var(--line);
+}
+
+.arrival-card h3 {
+  margin: 15px 0 12px;
+  font-size: 1.55rem;
+}
+
+.arrival-card p {
+  color: var(--muted);
+}
+
+.taxi-card {
+  margin: 20px 0;
+  padding: 17px;
+  background: var(--soft-white);
+  border: 1px solid var(--line);
+}
+
+.taxi-card strong,
+.taxi-card span {
+  display: block;
+}
+
+.taxi-card span {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: .88rem;
+}
+
+@media (max-width: 1040px) {
+  .site-header nav {
+    gap: 10px;
+  }
+
+  .site-header nav a {
+    font-size: .59rem;
+  }
+}
+
+@media (max-width: 820px) {
+  .venue-location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .embedded-map {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .venue-address-card {
+    padding: 32px 27px;
+  }
+
+  .subway-feature {
+    padding: 38px 24px;
+  }
+
+  .arrival-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .arrival-card {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .map-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .map-button {
+    text-align: center;
+  }
+
+  .subway-badges {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .subway-or,
+  .exit-badge {
+    margin-left: 0;
+  }
+
+  .route-step {
+    grid-template-columns: 38px 1fr;
+    gap: 12px;
+    padding: 22px 19px;
+  }
+
+  .route-icon {
+    display: none;
+  }
+
+  .route-number {
+    width: 32px;
+    height: 32px;
+  }
+
+  .embedded-map,
+  .embedded-map iframe {
+    min-height: 330px;
+  }
+}
+
+
+/* =========================
+   U.S. RECEPTION / 미국 피로연
+   ========================= */
+
+.us-reception-section {
+  max-width: none;
+  background: var(--soft-white);
+}
+
+.us-reception-card {
+  max-width: 1080px;
+  margin: 0 auto;
+  border: 1px solid var(--line);
+  background: var(--ivory);
+}
+
+.us-reception-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--line);
+  font-family: Arial, "Apple SD Gothic Neo", sans-serif;
+  font-size: .67rem;
+  letter-spacing: .12em;
+  color: var(--muted);
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sage);
+}
+
+.us-reception-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.us-reception-details > div {
+  min-height: 220px;
+  padding: 38px 34px;
+  border-right: 1px solid var(--line);
+}
+
+.us-reception-details > div:last-child {
+  border-right: 0;
+}
+
+.us-reception-details h3 {
+  margin: 8px 0 8px;
+  font-size: 1.7rem;
+}
+
+.us-reception-note {
+  padding: 26px 34px;
+  text-align: center;
+  border-top: 1px solid var(--line);
+  background: rgba(143,155,134,.08);
+}
+
+.us-reception-note p {
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--muted);
+}
+
+@media (max-width: 820px) {
+  .us-reception-details {
+    grid-template-columns: 1fr;
+  }
+
+  .us-reception-details > div {
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .us-reception-details > div:last-child {
+    border-bottom: 0;
+  }
+}
+
+
+/* =========================
+   DIETARY NEEDS
+   ========================= */
+
+.dietary-section {
+  max-width: none;
+  background: var(--ivory);
+}
+
+.dietary-grid {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.dietary-card {
+  padding: 34px 32px;
+  border-right: 1px solid var(--line);
+}
+
+.dietary-card:last-child {
+  border-right: 0;
+}
+
+.dietary-card h3 {
+  margin: 15px 0 12px;
+  font-size: 1.48rem;
+  line-height: 1.2;
+}
+
+.dietary-card p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.dietary-note {
+  max-width: 900px;
+  margin: 34px auto 0;
+  padding: 22px 25px;
+  background: var(--soft-white);
+  border-left: 3px solid var(--sage);
+}
+
+.rsvp-preview {
+  max-width: 900px;
+  margin: 38px auto 8px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  background: var(--soft-white);
+  text-align: left;
+}
+
+.rsvp-preview > .eyebrow {
+  text-align: center;
+}
+
+.rsvp-question-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 24px;
+}
+
+.rsvp-question-grid > div {
+  padding: 5px 25px;
+  border-right: 1px solid var(--line);
+}
+
+.rsvp-question-grid > div:last-child {
+  border-right: 0;
+}
+
+.question-number {
+  display: block;
+  margin-bottom: 11px;
+  font-family: Arial, sans-serif;
+  font-size: .66rem;
+  color: var(--sage);
+}
+
+.rsvp-question-grid strong,
+.rsvp-question-grid small {
+  display: block;
+}
+
+.rsvp-question-grid strong {
+  font-weight: 400;
+  font-size: 1.08rem;
+  line-height: 1.35;
+}
+
+.rsvp-question-grid small {
+  margin-top: 10px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+@media (max-width: 820px) {
+  .dietary-grid,
+  .rsvp-question-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dietary-card {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .dietary-card:last-child {
+    border-bottom: 0;
+  }
+
+  .rsvp-question-grid > div {
+    padding: 20px 5px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .rsvp-question-grid > div:last-child {
+    border-bottom: 0;
+  }
+}
+
+
+/* =========================
+   VERSION 2.4 — INTRO / FILM / PHOTOS
+   ========================= */
+
+/* The couple's names are now completely separate from imagery. */
+.intro-hero {
+  min-height: 92vh;
+  padding: 125px 7vw 70px;
+  display: grid;
+  place-items: center;
+  background: var(--ivory);
+  text-align: center;
+}
+
+.intro-hero-inner {
+  width: min(900px, 100%);
+}
+
+.intro-names {
+  margin: 0;
+  color: var(--charcoal);
+  font-size: clamp(4rem, 10vw, 8.5rem);
+  line-height: .9;
+  letter-spacing: -.035em;
+}
+
+.intro-names span {
+  display: block;
+}
+
+.intro-names em {
+  display: block;
+  margin: 15px 0;
+  color: var(--sage);
+  font-size: .48em;
+  font-weight: 400;
+}
+
+.intro-divider {
+  width: 76px;
+  height: 1px;
+  margin: 35px auto 24px;
+  background: var(--beige);
+}
+
+.intro-date,
+.intro-location {
+  margin: 0;
+  font-family: Arial, "Apple SD Gothic Neo", sans-serif;
+  letter-spacing: .14em;
+  font-size: .76rem;
+}
+
+.intro-location {
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+.intro-scroll-link {
+  margin-top: 46px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  text-decoration: none;
+  font-family: Arial, "Apple SD Gothic Neo", sans-serif;
+  font-size: .68rem;
+  letter-spacing: .12em;
+  color: var(--charcoal);
+}
+
+.intro-scroll-link .arrow {
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+  color: var(--sage);
+}
+
+/* Video is its own clean block with no text overlay. */
+.film-section {
+  padding: 105px 6vw 120px;
+  background: var(--soft-white);
+}
+
+.film-heading {
+  max-width: 800px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.film-heading h2 {
+  margin: 0;
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  line-height: 1.04;
+  font-weight: 400;
+}
+
+.film-frame {
+  position: relative;
+  width: min(1280px, 100%);
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), transparent 35%),
+    linear-gradient(135deg, #aaa59d, #d7d0c6);
+}
+
+.film-frame video {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #000;
+}
+
+.film-frame.has-video video {
+  display: block;
+}
+
+.film-frame.has-video .film-placeholder-content {
+  display: none;
+}
+
+.film-placeholder-content {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  padding: 30px;
+  text-align: center;
+  color: white;
+}
+
+.play-mark {
+  width: 68px;
+  height: 68px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+  padding-left: 4px;
+  border: 1px solid rgba(255,255,255,.76);
+  border-radius: 50%;
+  font-size: 1.1rem;
+}
+
+.film-placeholder-content p {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.film-placeholder-content small {
+  display: block;
+  margin-top: 8px;
+  font-family: Arial, "Apple SD Gothic Neo", sans-serif;
+  font-size: .72rem;
+  letter-spacing: .04em;
+  opacity: .85;
+}
+
+/* Engagement photos are presented later, cleanly, with no text overlay. */
+.photo-intro-section {
+  padding: 115px 7vw;
+  background: var(--ivory);
+}
+
+.photo-gallery-preview {
+  width: min(1220px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr .85fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.gallery-photo {
+  min-height: 460px;
+}
+
+.gallery-photo:first-child {
+  min-height: 620px;
+}
+
+.gallery-photo .placeholder-inner {
+  min-height: 100%;
+}
+
+/* Disable older hero styles from affecting the new layout. */
+.hero,
+.hero-image,
+.hero-overlay {
+  all: unset;
+}
+
+@media (max-width: 820px) {
+  .intro-hero {
+    min-height: 82vh;
+    padding-top: 110px;
+  }
+
+  .film-section {
+    padding: 80px 5vw 90px;
+  }
+
+  .film-frame {
+    aspect-ratio: 4 / 3;
+  }
+
+  .photo-gallery-preview {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery-photo:first-child {
+    grid-column: 1 / -1;
+    min-height: 520px;
+  }
+
+  .gallery-photo {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 560px) {
+  .intro-names {
+    font-size: clamp(3.4rem, 18vw, 5.5rem);
+  }
+
+  .film-frame {
+    aspect-ratio: 9 / 12;
+  }
+
+  .photo-gallery-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-photo:first-child,
+  .gallery-photo {
+    grid-column: auto;
+    min-height: 480px;
+  }
+}
