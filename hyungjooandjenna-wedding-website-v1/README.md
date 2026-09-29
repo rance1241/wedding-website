@@ -1,48 +1,26 @@
-# Hyung Joo & Jenna Wedding Website — Version 3.2
+# Hyung Joo & Jenna Wedding Website — Version 3.3
 
-Version 3.2 includes your actual wedding trailer video.
+Version 3.3 adds a second one-photo-at-a-time carousel below **Cutscenes**.
 
-## What changed
+## New section
 
-- Added the uploaded video directly to:
-  `media/wedding-film.mp4`
-- The Trailer section will automatically load this video.
-- The video keeps its original aspect ratio.
-- The full frame is shown without forced cropping or stretching.
-- All Version 3.1 features remain:
-  - Trailer title
-  - Cutscenes photo carousel
-  - 20 photos in the selected order
-  - left/right arrows
-  - swipe support
-  - keyboard arrow support
-  - bilingual EN / 한국어
-  - detailed venue directions
-  - U.S. reception section
-  - RSVP dietary restriction question
+**B-Roll** — “The moments between the big moments.”
 
-## How to update the live site
+- 27 additional photos in the exact upload order
+- left/right arrows
+- swipe support on phones
+- keyboard arrow support
+- photo counter and progress line
+- full images shown without intentional cropping
+- web-optimized copies for faster loading
 
-Keep the existing Vercel Root Directory:
+Images are in `images/memories/`.
 
-`hyungjooandjenna-wedding-website-v1`
+## Updating the live site
+1. Download and unzip Version 3.3.
+2. Open GitHub → `wedding-website` → `hyungjooandjenna-wedding-website-v1`.
+3. Replace `index.html`, `style.css`, `script.js`, and `README.md`.
+4. Upload/replace the `images` and `media` folders.
+5. Commit changes. Vercel redeploys automatically.
 
-1. Download and unzip Version 3.2.
-2. Open GitHub → `wedding-website`.
-3. Open `hyungjooandjenna-wedding-website-v1`.
-4. Replace:
-   - `index.html`
-   - `style.css`
-   - `script.js`
-   - `README.md`
-5. Upload/replace these folders too:
-   - `images`
-   - `media`
-6. Make sure the video exists at:
-   `media/wedding-film.mp4`
-7. Commit changes.
-8. Vercel will redeploy automatically.
-9. Refresh:
-   `https://www.hyungjooandjenna.com`
-
-Do not change Spaceship DNS or Vercel domain settings.
+Do not change Vercel domain or Spaceship DNS settings.

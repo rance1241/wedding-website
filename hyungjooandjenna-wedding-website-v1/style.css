@@ -1610,3 +1610,23 @@ html[lang="ko"] footer p {
     padding: 0 7vw;
   }
 }
+
+
+/* VERSION 3.3 — B-ROLL MEMORIES */
+.memory-section{padding:115px 7vw 125px;background:var(--charcoal);color:var(--ivory)}
+.memory-section .eyebrow{color:var(--beige)}
+.memory-section .section-intro{color:rgba(247,243,236,.7)}
+.memory-carousel{width:min(1080px,100%);margin:0 auto}
+.memory-stage{position:relative;width:100%;min-height:70vh;display:grid;place-items:center;overflow:hidden;background:#171614;border:1px solid rgba(247,243,236,.17)}
+.memory-slide{grid-area:1/1;width:100%;margin:0;display:none;align-items:center;justify-content:center}
+.memory-slide.active{display:flex}
+.memory-slide img{display:block;width:auto;max-width:100%;height:auto;max-height:82vh;object-fit:contain;object-position:center}
+.memory-arrow{position:absolute;top:50%;z-index:4;width:54px;height:54px;display:grid;place-items:center;transform:translateY(-50%);border:1px solid rgba(255,255,255,.35);border-radius:50%;background:rgba(23,22,20,.70);color:var(--ivory);font-family:Arial,sans-serif;font-size:1.35rem;cursor:pointer;backdrop-filter:blur(8px);transition:background .18s ease,color .18s ease}
+.memory-arrow:hover{background:var(--ivory);color:var(--charcoal)}
+.memory-prev{left:22px}.memory-next{right:22px}
+.memory-controls{margin-top:18px;display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center}
+.memory-counter,.memory-hint{font-family:Arial,"Apple SD Gothic Neo",sans-serif;font-size:.68rem;letter-spacing:.08em;color:rgba(247,243,236,.65)}
+.memory-progress{position:relative;height:1px;background:rgba(247,243,236,.18);overflow:hidden}
+.memory-progress span{position:absolute;inset:0 auto 0 0;width:3.704%;background:var(--beige);transition:width .25s ease}
+@media(max-width:820px){.memory-stage{min-height:58vh}.memory-slide img{max-height:72vh}.memory-arrow{width:46px;height:46px}.memory-prev{left:12px}.memory-next{right:12px}.memory-controls{grid-template-columns:auto 1fr}.memory-hint{grid-column:1/-1;text-align:center}}
+@media(max-width:560px){.memory-section{padding-left:0;padding-right:0}.memory-section .section-heading{padding-left:7vw;padding-right:7vw}.memory-stage{min-height:50vh;border-left:0;border-right:0}.memory-slide img{width:100%;max-height:none}.memory-arrow{width:42px;height:42px}.memory-controls{padding:0 7vw}}

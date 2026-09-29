@@ -151,3 +151,20 @@ if (weddingFilm && filmFrame) {
 
   showSlide(0);
 })();
+
+
+// Version 3.3 — B-Roll memories carousel
+(() => {
+  const carousel=document.getElementById("memoryCarousel"); if(!carousel) return;
+  const slides=Array.from(carousel.querySelectorAll(".memory-slide"));
+  const prev=document.getElementById("memoryPrev"), next=document.getElementById("memoryNext");
+  const current=document.getElementById("memoryCurrent"), total=document.getElementById("memoryTotal"), progress=document.getElementById("memoryProgressBar");
+  let idx=0, touchStartX=null; total.textContent=String(slides.length);
+  function show(i){idx=(i+slides.length)%slides.length;slides.forEach((s,n)=>s.classList.toggle("active",n===idx));current.textContent=String(idx+1);progress.style.width=`${((idx+1)/slides.length)*100}%`;}
+  prev.addEventListener("click",()=>show(idx-1)); next.addEventListener("click",()=>show(idx+1));
+  carousel.setAttribute("tabindex","0");
+  carousel.addEventListener("keydown",e=>{if(e.key==="ArrowLeft"){e.preventDefault();show(idx-1)}if(e.key==="ArrowRight"){e.preventDefault();show(idx+1)}});
+  carousel.addEventListener("touchstart",e=>{touchStartX=e.changedTouches[0].clientX},{passive:true});
+  carousel.addEventListener("touchend",e=>{if(touchStartX===null)return;const d=e.changedTouches[0].clientX-touchStartX;if(Math.abs(d)>50)show(d<0?idx+1:idx-1);touchStartX=null},{passive:true});
+  show(0);
+})();
