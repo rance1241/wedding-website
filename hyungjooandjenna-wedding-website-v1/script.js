@@ -44,7 +44,7 @@ mainNav.querySelectorAll("a").forEach((link) => {
   });
 });
 
-const weddingDate = new Date("2027-06-26T00:00:00+09:00");
+const weddingDate = new Date("2027-06-26T12:00:00+09:00");
 
 function updateCountdown() {
   const now = new Date();
