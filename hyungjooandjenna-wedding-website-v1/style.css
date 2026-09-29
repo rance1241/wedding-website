@@ -1739,3 +1739,20 @@ html[lang="ko"] footer p {
     padding: 13px 14px;
   }
 }
+
+
+/* =========================
+   VERSION 3.8 — WEDDING TIMING NOTE
+   ========================= */
+
+.wedding-flex-note {
+  max-width: 960px;
+  margin: 32px auto 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--sage);
+  background: rgba(143,155,134,.10);
+}
+
+.wedding-flex-note strong {
+  margin-right: 4px;
+}
