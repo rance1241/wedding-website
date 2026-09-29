@@ -83,3 +83,71 @@ if (weddingFilm && filmFrame) {
     filmFrame.classList.remove("has-video");
   });
 }
+
+
+// Version 3.1 — Cutscenes carousel
+(() => {
+  const carousel = document.getElementById("cutsceneCarousel");
+  if (!carousel) return;
+
+  const slides = Array.from(carousel.querySelectorAll(".cutscene-slide"));
+  const prevButton = document.getElementById("cutscenePrev");
+  const nextButton = document.getElementById("cutsceneNext");
+  const currentLabel = document.getElementById("cutsceneCurrent");
+  const totalLabel = document.getElementById("cutsceneTotal");
+  const progressBar = document.getElementById("cutsceneProgressBar");
+
+  let currentIndex = 0;
+  let touchStartX = null;
+
+  totalLabel.textContent = String(slides.length);
+
+  function showSlide(index) {
+    currentIndex = (index + slides.length) % slides.length;
+
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === currentIndex);
+    });
+
+    currentLabel.textContent = String(currentIndex + 1);
+    progressBar.style.width = `${((currentIndex + 1) / slides.length) * 100}%`;
+  }
+
+  prevButton.addEventListener("click", () => showSlide(currentIndex - 1));
+  nextButton.addEventListener("click", () => showSlide(currentIndex + 1));
+
+  carousel.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      showSlide(currentIndex - 1);
+    }
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      showSlide(currentIndex + 1);
+    }
+  });
+
+  carousel.setAttribute("tabindex", "0");
+
+  carousel.addEventListener("touchstart", (event) => {
+    touchStartX = event.changedTouches[0].clientX;
+  }, { passive: true });
+
+  carousel.addEventListener("touchend", (event) => {
+    if (touchStartX === null) return;
+    const touchEndX = event.changedTouches[0].clientX;
+    const delta = touchEndX - touchStartX;
+
+    if (Math.abs(delta) > 50) {
+      if (delta < 0) {
+        showSlide(currentIndex + 1);
+      } else {
+        showSlide(currentIndex - 1);
+      }
+    }
+
+    touchStartX = null;
+  }, { passive: true });
+
+  showSlide(0);
+})();
