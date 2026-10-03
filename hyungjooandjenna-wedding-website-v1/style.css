@@ -2005,3 +2005,32 @@ html[lang="ko"] footer p {
   font-size: .72em;
   opacity: .65;
 }
+
+
+/* =========================
+   VERSION 4.6 — SAGE NAME SECTION
+   ========================= */
+
+/* Only the opening section containing Hyung Joo & Jenna's names. */
+.intro-hero {
+  background: #8f9b86;
+}
+
+/* Improve contrast only inside that opening section. */
+.intro-hero,
+.intro-hero h1,
+.intro-hero h2,
+.intro-hero p,
+.intro-hero .eyebrow,
+.intro-hero .intro-kicker,
+.intro-hero .intro-date,
+.intro-hero .intro-location {
+  color: #fffdf8;
+}
+
+.intro-hero .intro-rule,
+.intro-hero .divider,
+.intro-hero hr {
+  border-color: rgba(255, 253, 248, .45);
+  background: rgba(255, 253, 248, .45);
+}

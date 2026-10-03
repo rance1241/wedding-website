@@ -106,3 +106,9 @@ Added official links for:
 - Fixed HTML formatting tags appearing as visible text in translated travel guidance
 - Bold labels such as AREX airport railroad, Airport limousine bus, Taxi, Transit card, etc. now render correctly
 - English/Korean language switching continues to work with formatted text
+
+
+## Version 4.6 updates
+- Changed only the top name section (`intro-hero`) to sage green
+- Kept all other website section backgrounds unchanged
+- Changed text within that top section to ivory for contrast
