@@ -2034,3 +2034,32 @@ html[lang="ko"] footer p {
   border-color: rgba(255, 253, 248, .45);
   background: rgba(255, 253, 248, .45);
 }
+
+
+/* =========================
+   VERSION 4.7 — LIGHT SAGE NAME SECTION
+   Reference color sampled from uploaded image: #D0E0C6
+   ========================= */
+
+.intro-hero {
+  background: #D0E0C6;
+}
+
+/* Dark text gives better contrast on this lighter sage. */
+.intro-hero,
+.intro-hero h1,
+.intro-hero h2,
+.intro-hero p,
+.intro-hero .eyebrow,
+.intro-hero .intro-kicker,
+.intro-hero .intro-date,
+.intro-hero .intro-location {
+  color: #2c2926;
+}
+
+.intro-hero .intro-rule,
+.intro-hero .divider,
+.intro-hero hr {
+  border-color: rgba(44, 41, 38, .28);
+  background: rgba(44, 41, 38, .28);
+}

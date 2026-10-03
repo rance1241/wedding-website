@@ -112,3 +112,9 @@ Added official links for:
 - Changed only the top name section (`intro-hero`) to sage green
 - Kept all other website section backgrounds unchanged
 - Changed text within that top section to ivory for contrast
+
+
+## Version 4.7 updates
+- Changed only the top name section to the uploaded light sage reference color
+- Background color: #D0E0C6
+- Switched text in that section to charcoal for readability
