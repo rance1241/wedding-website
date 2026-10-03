@@ -1,0 +1,18 @@
+MAIN WEBSITE V4.5
+
+Your Vercel Root Directory is:
+hyungjooandjenna-wedding-website-v1
+
+Upload/replace this exact folder in the ROOT of your GitHub repository.
+
+After upload, this path in GitHub must exist:
+hyungjooandjenna-wedding-website-v1/index.html
+
+Verified contents:
+- Cutscenes: 21 photos
+- B-Roll: 39 photos
+- engagement-01.jpg through engagement-21.jpg
+- memory-01.jpg through memory-39.jpg
+
+Do NOT upload these files into a second nested copy such as:
+hyungjooandjenna-wedding-website-v1/hyungjooandjenna-wedding-website-v1/
