@@ -37,3 +37,12 @@ A note was also added explaining that guests with a tighter schedule may go to t
 5. Keep the included `images` and `media` folders.
 6. Commit changes.
 7. Vercel redeploys automatically.
+
+
+## Version 3.9 updates
+
+- Renamed U.S. Reception to U.S. Reception Party
+- Rewrote the Wisconsin party description as a casual, low-key family-home celebration
+- Clarified that the Wisconsin party is for guests who cannot travel to Korea and guests who want to attend both events
+- Added Korean Wedding Gift Tradition / 축의금 section after the wedding schedule
+- Added Gifts / 축의금 안내 to the navigation
