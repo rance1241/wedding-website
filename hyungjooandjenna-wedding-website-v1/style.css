@@ -1981,3 +1981,27 @@ html[lang="ko"] footer p {
     text-align: center;
   }
 }
+
+
+/* =========================
+   VERSION 4.1 — HOTEL BOOKING LINKS
+   ========================= */
+
+.hotel-booking-link {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(44,41,38,.28);
+  transition: color .15s ease, text-decoration-color .15s ease;
+}
+
+.hotel-booking-link:hover {
+  color: var(--sage);
+  text-decoration-color: var(--sage);
+}
+
+.hotel-booking-link span {
+  font-size: .72em;
+  opacity: .65;
+}

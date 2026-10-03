@@ -74,3 +74,35 @@ Added official links for:
 - Korean currency/payment information
 - Electricity/mobile connectivity
 - 1330 Korea Travel Helpline
+
+
+## Version 4.1 updates
+
+- Added WiFi Dosirak / portable pocket Wi-Fi as an alternative to SIM/eSIM
+- Added official WiFi Dosirak rental link
+- Made all 20 hotel names clickable
+- Hotel links open a Booking.com search for the specific property in Seoul
+
+
+## Version 4.2 updates
+
+- Added the new beach photo as Cutscenes photo 15
+- Previous Cutscenes photos 15–20 shifted to 16–21
+- Cutscenes carousel now contains 21 photos total
+
+
+## Version 4.3 updates
+
+- Completely replaced the previous B-Roll gallery
+- Combined the two new uploaded batches in exact upload order
+- B-Roll now contains 39 photos total
+- Files are memory-01.jpg through memory-39.jpg
+- B-Roll counter updated to 1 / 39
+- Cutscenes gallery remains at 21 photos
+
+
+## Version 4.4 updates
+
+- Fixed HTML formatting tags appearing as visible text in translated travel guidance
+- Bold labels such as AREX airport railroad, Airport limousine bus, Taxi, Transit card, etc. now render correctly
+- English/Korean language switching continues to work with formatted text

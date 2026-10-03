@@ -9,7 +9,7 @@ function setLanguage(lang) {
 
   translatableElements.forEach((el) => {
     const translation = el.dataset[lang];
-    if (translation) el.textContent = translation;
+    if (translation) el.innerHTML = translation;
   });
 
   languageButtons.forEach((button) => {
