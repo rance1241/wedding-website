@@ -46,3 +46,31 @@ A note was also added explaining that guests with a tighter schedule may go to t
 - Clarified that the Wisconsin party is for guests who cannot travel to Korea and guests who want to attend both events
 - Added Korean Wedding Gift Tradition / 축의금 section after the wedding schedule
 - Added Gifts / 축의금 안내 to the navigation
+
+
+## Version 4.0 updates
+
+### Korean wedding gift/check-in guide
+- Envelopes and pens are provided at the venue
+- Guests write their name on the envelope
+- Hyung Joo's family members receive the envelope at the reception desk
+- Guests are asked for the exact number of meal tickets needed
+- Explanation added that meal cost is based on the number of tickets distributed
+- Guests sign the 방명록 / wedding guest book last
+- Removed the old bottom disclaimer box
+
+### Welcome to Seoul
+Expanded all three first-time visitor sections:
+- Getting to Seoul
+- Getting Around
+- Before You Arrive
+
+Added official links for:
+- Incheon Airport transportation and airport buses
+- Seoul public transportation
+- NAVER Map / travel apps
+- K-ETA
+- Korea e-Arrival Card
+- Korean currency/payment information
+- Electricity/mobile connectivity
+- 1330 Korea Travel Helpline
