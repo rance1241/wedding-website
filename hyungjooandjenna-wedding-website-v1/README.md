@@ -118,3 +118,22 @@ Added official links for:
 - Changed only the top name section to the uploaded light sage reference color
 - Background color: #D0E0C6
 - Switched text in that section to charcoal for readability
+
+
+## Version 4.8 updates
+
+- Removed the repetitive "Keeping it simple" box from U.S. Reception Party
+- Replaced the old RSVP preview with an interactive RSVP
+- Added four attendance choices:
+  - Korea Wedding
+  - U.S. Reception Party
+  - Both
+  - Not Attending
+- RSVP form collects:
+  - Name
+  - Plus one
+  - Plus-one name
+  - Dietary restrictions / food allergies
+  - Note
+- Not Attending hides the meal/guest fields
+- Added Google Sheets backend template and setup instructions

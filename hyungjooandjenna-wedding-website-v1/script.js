@@ -16,6 +16,11 @@ function setLanguage(lang) {
     button.classList.toggle("active", button.dataset.lang === lang);
   });
 
+  document.querySelectorAll("[data-placeholder-en][data-placeholder-ko]").forEach((el) => {
+    const placeholder = lang === "ko" ? el.dataset.placeholderKo : el.dataset.placeholderEn;
+    if (placeholder) el.setAttribute("placeholder", placeholder);
+  });
+
   localStorage.setItem("weddingLanguage", lang);
 }
 
@@ -167,4 +172,147 @@ if (weddingFilm && filmFrame) {
   carousel.addEventListener("touchstart",e=>{touchStartX=e.changedTouches[0].clientX},{passive:true});
   carousel.addEventListener("touchend",e=>{if(touchStartX===null)return;const d=e.changedTouches[0].clientX-touchStartX;if(Math.abs(d)>50)show(d<0?idx+1:idx-1);touchStartX=null},{passive:true});
   show(0);
+})();
+
+
+// =========================
+// VERSION 4.8 — MAIN WEBSITE RSVP
+// =========================
+
+// After following SETUP-RSVP-GOOGLE-SHEETS.md, paste the deployed
+// Google Apps Script Web App URL between the quotes below.
+const MAIN_RSVP_ENDPOINT = "";
+
+(() => {
+  const choiceButtons = Array.from(document.querySelectorAll(".rsvp-choice"));
+  const form = document.getElementById("mainRsvpForm");
+  const attendanceInput = document.getElementById("rsvpAttendance");
+  const selectedLabel = document.getElementById("rsvpSelected");
+  const attendingFields = document.getElementById("attendingFields");
+  const plusOneNameField = document.getElementById("plusOneNameField");
+  const status = document.getElementById("mainRsvpStatus");
+
+  if (!form || !choiceButtons.length) return;
+
+  function currentLanguage() {
+    return document.documentElement.lang === "ko" ? "ko" : "en";
+  }
+
+  function attendanceLabel(value) {
+    const labels = {
+      "Korea Wedding": { en: "Korea Wedding", ko: "한국 결혼식" },
+      "U.S. Reception Party": { en: "U.S. Reception Party", ko: "미국 리셉션 파티" },
+      "Both": { en: "Both celebrations", ko: "두 행사 모두" },
+      "Not Attending": { en: "Not attending", ko: "불참" }
+    };
+    return labels[value]?.[currentLanguage()] || value;
+  }
+
+  function updateSelectedLabel() {
+    const value = attendanceInput.value;
+    if (!value) return;
+    const prefix = currentLanguage() === "ko" ? "선택" : "Selected";
+    selectedLabel.textContent = `${prefix}: ${attendanceLabel(value)}`;
+  }
+
+  choiceButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const choice = button.dataset.rsvpChoice;
+
+      choiceButtons.forEach((b) => b.classList.toggle("selected", b === button));
+      attendanceInput.value = choice;
+      form.hidden = false;
+
+      const notAttending = choice === "Not Attending";
+      attendingFields.hidden = notAttending;
+
+      if (notAttending) {
+        form.querySelectorAll('input[name="plusOne"]').forEach((radio) => {
+          radio.checked = radio.value === "No";
+        });
+        plusOneNameField.hidden = true;
+        form.elements.plusOneName.value = "";
+        form.elements.dietary.value = "";
+      }
+
+      status.textContent = "";
+      updateSelectedLabel();
+
+      setTimeout(() => {
+        form.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 80);
+    });
+  });
+
+  form.querySelectorAll('input[name="plusOne"]').forEach((radio) => {
+    radio.addEventListener("change", () => {
+      plusOneNameField.hidden = radio.value !== "Yes" || !radio.checked;
+      if (radio.value === "No" && radio.checked) {
+        form.elements.plusOneName.value = "";
+      }
+    });
+  });
+
+  document.querySelectorAll(".lang-option").forEach((button) => {
+    button.addEventListener("click", () => {
+      setTimeout(updateSelectedLabel, 0);
+    });
+  });
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!attendanceInput.value) return;
+
+    const fd = new FormData(form);
+    const plusOne = fd.get("plusOne") || "No";
+    const payload = {
+      type: "main_website_rsvp",
+      attendance: fd.get("attendance") || "",
+      name: fd.get("name") || "",
+      plusOne,
+      plusOneName: plusOne === "Yes" ? (fd.get("plusOneName") || "") : "",
+      partySize: plusOne === "Yes" ? 2 : 1,
+      dietary: fd.get("dietary") || "",
+      note: fd.get("note") || "",
+      language: currentLanguage(),
+      submittedAt: new Date().toISOString()
+    };
+
+    if (!MAIN_RSVP_ENDPOINT) {
+      status.textContent = currentLanguage() === "ko"
+        ? "RSVP 입력란은 준비되었습니다. Google Sheets 연결 후 실제 응답이 저장됩니다."
+        : "The RSVP form is ready. Connect Google Sheets to begin saving responses.";
+      return;
+    }
+
+    const submitButton = form.querySelector(".rsvp-submit");
+    submitButton.disabled = true;
+    status.textContent = currentLanguage() === "ko" ? "전송 중..." : "Sending...";
+
+    try {
+      await fetch(MAIN_RSVP_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload)
+      });
+
+      status.textContent = currentLanguage() === "ko"
+        ? "감사합니다. 참석 여부가 전달되었습니다."
+        : "Thank you! Your RSVP has been submitted.";
+
+      const selectedAttendance = attendanceInput.value;
+      form.reset();
+      attendanceInput.value = selectedAttendance;
+      plusOneNameField.hidden = true;
+      updateSelectedLabel();
+    } catch (error) {
+      status.textContent = currentLanguage() === "ko"
+        ? "전송 중 문제가 발생했습니다. 잠시 후 다시 시도해 주세요."
+        : "Something went wrong. Please try again.";
+    } finally {
+      submitButton.disabled = false;
+    }
+  });
 })();
