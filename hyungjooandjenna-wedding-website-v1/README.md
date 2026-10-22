@@ -166,3 +166,10 @@ No manual script.js edit is needed for this build.
   - total party size
   - additional guest names
 - Existing working Google Sheets endpoint remains compatible; no redeployment required
+
+
+## Version 4.15 updates
+
+- Changed RSVP cards from sage/green tones to the same warm beige palette as the instruction box
+- Kept darker hover behavior
+- Kept selected-state emphasis while removing the green color family

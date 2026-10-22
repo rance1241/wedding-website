@@ -2521,3 +2521,56 @@ html[lang="ko"] footer p {
 .additional-guests-field textarea {
   min-height: 96px;
 }
+
+
+/* =========================
+   VERSION 4.15 — WARM RSVP PALETTE
+   ========================= */
+
+.rsvp-choice,
+.rsvp-choice:last-child,
+.rsvp-choice:nth-child(2) {
+  border-color: #c8b48c;
+  background: #eee3cf;
+  box-shadow: 0 4px 14px rgba(111, 93, 61, .08);
+}
+
+.rsvp-choice:hover,
+.rsvp-choice:focus-visible {
+  background: #e4d3b6;
+  border-color: #b59667;
+  box-shadow: 0 8px 20px rgba(111, 93, 61, .14);
+}
+
+.rsvp-choice.selected {
+  background: #d8c19c;
+  border-color: #b59667;
+  color: #2c2926;
+  box-shadow: 0 8px 20px rgba(111, 93, 61, .16);
+}
+
+.rsvp-choice-number {
+  color: #8a6d46;
+}
+
+.rsvp-choice.selected .rsvp-choice-number {
+  color: #6f5d3d;
+}
+
+.rsvp-choice small {
+  color: #6d6458;
+}
+
+.rsvp-choice.selected small {
+  color: #5b5145;
+}
+
+.rsvp-choice-action {
+  color: #6f5d3d;
+}
+
+.rsvp-choice:hover .rsvp-choice-action,
+.rsvp-choice:focus-visible .rsvp-choice-action,
+.rsvp-choice.selected .rsvp-choice-action {
+  color: #5e4d33;
+}
