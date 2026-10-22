@@ -173,3 +173,11 @@ No manual script.js edit is needed for this build.
 - Changed RSVP cards from sage/green tones to the same warm beige palette as the instruction box
 - Kept darker hover behavior
 - Kept selected-state emphasis while removing the green color family
+
+
+## Version 4.16 updates
+
+- Reduced the Trailer/video frame size
+- Added viewport-based maximum height so the full video fits on screen more comfortably
+- Preserved the original video aspect ratio
+- Prevented horizontal overflow on phones and smaller screens

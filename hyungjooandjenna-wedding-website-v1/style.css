@@ -2574,3 +2574,84 @@ html[lang="ko"] footer p {
 .rsvp-choice.selected .rsvp-choice-action {
   color: #5e4d33;
 }
+
+
+/* =========================
+   VERSION 4.16 — SMALLER TRAILER FRAME
+   ========================= */
+
+/* Keep the trailer fully inside the viewport while preserving aspect ratio. */
+.film-shell,
+.trailer-shell,
+.video-shell,
+.video-wrap,
+.film-wrap {
+  width: min(820px, 88vw);
+  max-width: 88vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.film-shell video,
+.trailer-shell video,
+.video-shell video,
+.video-wrap video,
+.film-wrap video,
+video#weddingFilm,
+#weddingFilm,
+.wedding-film {
+  display: block;
+  width: 100%;
+  max-width: 820px;
+  max-height: calc(100vh - 190px);
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* Give the trailer a little more breathing room on phones. */
+@media (max-width: 820px) {
+  .film-shell,
+  .trailer-shell,
+  .video-shell,
+  .video-wrap,
+  .film-wrap {
+    width: min(92vw, 680px);
+    max-width: 92vw;
+  }
+
+  .film-shell video,
+  .trailer-shell video,
+  .video-shell video,
+  .video-wrap video,
+  .film-wrap video,
+  video#weddingFilm,
+  #weddingFilm,
+  .wedding-film {
+    max-width: 92vw;
+    max-height: calc(100dvh - 165px);
+  }
+}
+
+@media (max-width: 520px) {
+  .film-shell,
+  .trailer-shell,
+  .video-shell,
+  .video-wrap,
+  .film-wrap {
+    width: 90vw;
+    max-width: 90vw;
+  }
+
+  .film-shell video,
+  .trailer-shell video,
+  .video-shell video,
+  .video-wrap video,
+  .film-wrap video,
+  video#weddingFilm,
+  #weddingFilm,
+  .wedding-film {
+    max-width: 90vw;
+    max-height: calc(100dvh - 150px);
+  }
+}
