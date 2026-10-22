@@ -181,7 +181,7 @@ if (weddingFilm && filmFrame) {
 
 // After following SETUP-RSVP-GOOGLE-SHEETS.md, paste the deployed
 // Google Apps Script Web App URL between the quotes below.
-const MAIN_RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbyTPB8Bz1FDjTK9q-Bbv6nYXnScVdVzivRrn1EgjJctcGOMfi5COt6WkwsaT7JDDw0/exec";
+const MAIN_RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbzNIMboTaAWw5SesM8THnZkbXxHUzgNoYwJCV8GuYX7ea4hfjME6z4HtQC_MbBL2aUU/exec";
 
 (() => {
   const choiceButtons = Array.from(document.querySelectorAll(".rsvp-choice"));
