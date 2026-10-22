@@ -176,11 +176,9 @@ if (weddingFilm && filmFrame) {
 
 
 // =========================
-// VERSION 4.8 — MAIN WEBSITE RSVP
+// VERSION 4.14 — MAIN WEBSITE RSVP
 // =========================
 
-// After following SETUP-RSVP-GOOGLE-SHEETS.md, paste the deployed
-// Google Apps Script Web App URL between the quotes below.
 const MAIN_RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbz8qLGhj-QPNmjh6ihtt-m7TvZXJrh4QoOv3k8m8gEkqdlDj3BmjWxoh8FmggMYcRFW/exec";
 
 (() => {
@@ -189,7 +187,9 @@ const MAIN_RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbz8qLGhj-QPN
   const attendanceInput = document.getElementById("rsvpAttendance");
   const selectedLabel = document.getElementById("rsvpSelected");
   const attendingFields = document.getElementById("attendingFields");
-  const plusOneNameField = document.getElementById("plusOneNameField");
+  const partySizeInput = document.getElementById("partySize");
+  const additionalGuestsField = document.getElementById("additionalGuestsField");
+  const additionalGuestNames = document.getElementById("additionalGuestNames");
   const status = document.getElementById("mainRsvpStatus");
 
   if (!form || !choiceButtons.length) return;
@@ -215,6 +215,20 @@ const MAIN_RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbz8qLGhj-QPN
     selectedLabel.textContent = `${prefix}: ${attendanceLabel(value)}`;
   }
 
+  function updateGuestFields() {
+    if (!partySizeInput || !additionalGuestsField || !additionalGuestNames) return;
+
+    const size = Math.max(1, Number(partySizeInput.value) || 1);
+    const showAdditionalNames = size > 1;
+
+    additionalGuestsField.hidden = !showAdditionalNames;
+    additionalGuestNames.required = showAdditionalNames;
+
+    if (!showAdditionalNames) {
+      additionalGuestNames.value = "";
+    }
+  }
+
   choiceButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const choice = button.dataset.rsvpChoice;
@@ -227,12 +241,13 @@ const MAIN_RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbz8qLGhj-QPN
       attendingFields.hidden = notAttending;
 
       if (notAttending) {
-        form.querySelectorAll('input[name="plusOne"]').forEach((radio) => {
-          radio.checked = radio.value === "No";
-        });
-        plusOneNameField.hidden = true;
-        form.elements.plusOneName.value = "";
+        partySizeInput.value = "1";
+        additionalGuestsField.hidden = true;
+        additionalGuestNames.required = false;
+        additionalGuestNames.value = "";
         form.elements.dietary.value = "";
+      } else {
+        updateGuestFields();
       }
 
       status.textContent = "";
@@ -244,14 +259,8 @@ const MAIN_RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbz8qLGhj-QPN
     });
   });
 
-  form.querySelectorAll('input[name="plusOne"]').forEach((radio) => {
-    radio.addEventListener("change", () => {
-      plusOneNameField.hidden = radio.value !== "Yes" || !radio.checked;
-      if (radio.value === "No" && radio.checked) {
-        form.elements.plusOneName.value = "";
-      }
-    });
-  });
+  partySizeInput?.addEventListener("input", updateGuestFields);
+  partySizeInput?.addEventListener("change", updateGuestFields);
 
   document.querySelectorAll(".lang-option").forEach((button) => {
     button.addEventListener("click", () => {
@@ -265,26 +274,39 @@ const MAIN_RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbz8qLGhj-QPN
     if (!attendanceInput.value) return;
 
     const fd = new FormData(form);
-    const plusOne = fd.get("plusOne") || "No";
+    const notAttending = attendanceInput.value === "Not Attending";
+    const partySize = notAttending
+      ? "Not attending"
+      : Math.max(1, Number(fd.get("partySize")) || 1);
+
+    const guestNames = notAttending ? "" : (fd.get("additionalGuestNames") || "").trim();
+
+    if (!notAttending && Number(partySize) > 1 && !guestNames) {
+      status.textContent = currentLanguage() === "ko"
+        ? "함께 참석하시는 분들의 성함을 입력해 주세요."
+        : "Please enter the names of the additional guests attending with you.";
+      additionalGuestNames.focus();
+      return;
+    }
+
+    // Keep the existing backend compatible:
+    // - "plusOne" now simply indicates whether there are additional guests.
+    // - "plusOneName" stores all additional guest names.
+    // - "partySize" stores the total number attending.
+    const hasAdditionalGuests = !notAttending && Number(partySize) > 1;
+
     const payload = {
       type: "main_website_rsvp",
       attendance: fd.get("attendance") || "",
       name: fd.get("name") || "",
-      plusOne,
-      plusOneName: plusOne === "Yes" ? (fd.get("plusOneName") || "") : "",
-      partySize: plusOne === "Yes" ? 2 : 1,
-      dietary: fd.get("dietary") || "",
+      plusOne: hasAdditionalGuests ? "Yes" : "No",
+      plusOneName: hasAdditionalGuests ? guestNames : "",
+      partySize,
+      dietary: notAttending ? "" : (fd.get("dietary") || ""),
       note: fd.get("note") || "",
       language: currentLanguage(),
       submittedAt: new Date().toISOString()
     };
-
-    if (!MAIN_RSVP_ENDPOINT) {
-      status.textContent = currentLanguage() === "ko"
-        ? "RSVP 입력란은 준비되었습니다. Google Sheets 연결 후 실제 응답이 저장됩니다."
-        : "The RSVP form is ready. Connect Google Sheets to begin saving responses.";
-      return;
-    }
 
     const submitButton = form.querySelector(".rsvp-submit");
     submitButton.disabled = true;
@@ -305,7 +327,9 @@ const MAIN_RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbz8qLGhj-QPN
       const selectedAttendance = attendanceInput.value;
       form.reset();
       attendanceInput.value = selectedAttendance;
-      plusOneNameField.hidden = true;
+      partySizeInput.value = "1";
+      additionalGuestsField.hidden = true;
+      additionalGuestNames.required = false;
       updateSelectedLabel();
     } catch (error) {
       status.textContent = currentLanguage() === "ko"
@@ -315,4 +339,6 @@ const MAIN_RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbz8qLGhj-QPN
       submitButton.disabled = false;
     }
   });
+
+  updateGuestFields();
 })();

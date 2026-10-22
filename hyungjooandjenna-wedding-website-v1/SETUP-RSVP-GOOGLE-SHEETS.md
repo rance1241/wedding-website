@@ -44,3 +44,17 @@ You should see JSON similar to:
 If you still see `Script function not found: doGet`, Google is still serving an older deployment version.
 
 Only after the `/exec` URL shows `"ok":true` should you test the RSVP on the wedding website.
+
+
+## Party-size RSVP update
+
+The website now asks for total party size and additional guest names instead of a simple plus-one question.
+
+Your current deployed Apps Script remains compatible and does NOT need to be redeployed.
+
+If you want the Google Sheet column labels to match the new wording, you can safely rename these two header cells directly in the `Website RSVP` sheet:
+
+- `Plus One` → `Additional Guests?`
+- `Plus-One Name` → `Additional Guest Names`
+
+Renaming those header cells does not affect the script because responses are written by column position.

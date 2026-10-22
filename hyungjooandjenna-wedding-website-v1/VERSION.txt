@@ -1,15 +1,11 @@
 Hyung Joo & Jenna Main Wedding Website
-Version: 4.9
+Version 4.13 — Final RSVP Polish
 
-Expected live features:
-- Light sage top name section
-- Cutscenes: 21 photos
-- B-Roll: 39 photos
-- U.S. Reception Party has NO "Keeping it simple" box
-- RSVP choices:
-  1. Korea Wedding
-  2. U.S. Reception Party
-  3. Both
-  4. Not Attending
-- Clicking an RSVP choice expands the form
-- RSVP fields include name, plus one, plus-one name, dietary restrictions, and note
+Verified:
+- Working Google Apps Script RSVP endpoint is preconfigured
+- 21 Cutscenes photos
+- 39 B-Roll photos
+- RSVP cards are visibly clickable before hover
+- RSVP cards darken on hover
+- Selected RSVP card uses dark sage
+- RSVP instructions are highlighted in a contrasting box

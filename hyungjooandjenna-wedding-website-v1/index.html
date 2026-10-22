@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- BUILD: MAIN-WEDDING-v4.11 | RSVP-FULLY-WIRED -->
+<!-- BUILD: MAIN-WEDDING-v4.14 | MOBILE-MENU-PARTY-SIZE-RSVP -->
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -1255,11 +1255,15 @@
         <h2 data-en="Will you celebrate with us?" data-ko="함께해 주실 수 있나요?">
           Will you celebrate with us?
         </h2>
-        <p class="section-intro"
-           data-en="Choose the option that best matches your plans. The response form will open after you make a selection."
-           data-ko="참석 계획에 맞는 항목을 선택해 주세요. 선택하시면 아래에 참석 여부 입력란이 열립니다.">
-          Choose the option that best matches your plans. The response form will open after you make a selection.
-        </p>
+        <div class="rsvp-instruction">
+          <span class="rsvp-instruction-label"
+                data-en="HOW TO RSVP"
+                data-ko="참석 여부 선택 방법">HOW TO RSVP</span>
+          <p data-en="Choose one of the options below. Each box is clickable, and your RSVP form will open after you make a selection."
+             data-ko="아래 항목 중 하나를 선택해 주세요. 각 박스를 클릭하면 참석 여부 입력란이 열립니다.">
+            Choose one of the options below. Each box is clickable, and your RSVP form will open after you make a selection.
+          </p>
+        </div>
       </div>
 
       <div class="rsvp-choice-grid" role="group" aria-label="RSVP attendance choice">
@@ -1267,24 +1271,28 @@
           <span class="rsvp-choice-number">01</span>
           <strong data-en="Korea Wedding" data-ko="한국 결혼식">Korea Wedding</strong>
           <small data-en="June 26, 2027 · Seoul" data-ko="2027년 6월 26일 · 서울">June 26, 2027 · Seoul</small>
+          <span class="rsvp-choice-action" data-en="Select →" data-ko="선택하기 →">Select →</span>
         </button>
 
         <button class="rsvp-choice" type="button" data-rsvp-choice="U.S. Reception Party">
           <span class="rsvp-choice-number">02</span>
           <strong data-en="U.S. Reception Party" data-ko="미국 리셉션 파티">U.S. Reception Party</strong>
           <small data-en="Wisconsin · Date TBD" data-ko="위스콘신 · 날짜 추후 안내">Wisconsin · Date TBD</small>
+          <span class="rsvp-choice-action" data-en="Select →" data-ko="선택하기 →">Select →</span>
         </button>
 
         <button class="rsvp-choice" type="button" data-rsvp-choice="Both">
           <span class="rsvp-choice-number">03</span>
           <strong data-en="Both" data-ko="두 행사 모두">Both</strong>
           <small data-en="Korea + Wisconsin" data-ko="한국 + 위스콘신">Korea + Wisconsin</small>
+          <span class="rsvp-choice-action" data-en="Select →" data-ko="선택하기 →">Select →</span>
         </button>
 
         <button class="rsvp-choice" type="button" data-rsvp-choice="Not Attending">
           <span class="rsvp-choice-number">04</span>
           <strong data-en="Not Attending" data-ko="불참">Not Attending</strong>
           <small data-en="We will miss you!" data-ko="마음으로 함께해 주세요.">We will miss you!</small>
+          <span class="rsvp-choice-action" data-en="Select →" data-ko="선택하기 →">Select →</span>
         </button>
       </div>
 
@@ -1306,29 +1314,35 @@
           </label>
 
           <div id="attendingFields" class="rsvp-attending-fields rsvp-field-full">
-            <fieldset class="rsvp-fieldset">
-              <legend data-en="Will you bring a plus one?" data-ko="동반인이 있나요?">
-                Will you bring a plus one?
-              </legend>
-              <div class="rsvp-inline-options">
-                <label>
-                  <input type="radio" name="plusOne" value="No" checked>
-                  <span data-en="No" data-ko="없음">No</span>
-                </label>
-                <label>
-                  <input type="radio" name="plusOne" value="Yes">
-                  <span data-en="Yes" data-ko="있음">Yes</span>
-                </label>
-              </div>
-            </fieldset>
+            <label class="rsvp-field">
+              <span data-en="How many people are attending? *" data-ko="총 몇 명이 참석하시나요? *">
+                How many people are attending? *
+              </span>
+              <input type="number"
+                     name="partySize"
+                     id="partySize"
+                     min="1"
+                     max="20"
+                     value="1"
+                     inputmode="numeric"
+                     required>
+              <small class="rsvp-field-help"
+                     data-en="Include yourself in this number."
+                     data-ko="본인을 포함한 총 인원수를 입력해 주세요.">
+                Include yourself in this number.
+              </small>
+            </label>
 
-            <label class="rsvp-field plus-one-name-field" id="plusOneNameField" hidden>
-              <span data-en="Plus-one name" data-ko="동반인 성함">Plus-one name</span>
-              <input type="text"
-                     name="plusOneName"
-                     data-placeholder-en="Enter your guest's name"
-                     data-placeholder-ko="동반인 성함을 입력해 주세요"
-                     placeholder="Enter your guest's name">
+            <label class="rsvp-field additional-guests-field" id="additionalGuestsField" hidden>
+              <span data-en="Additional guest name(s) *" data-ko="추가 참석자 성함 *">
+                Additional guest name(s) *
+              </span>
+              <textarea name="additionalGuestNames"
+                        id="additionalGuestNames"
+                        rows="3"
+                        data-placeholder-en="List the names of everyone attending with you"
+                        data-placeholder-ko="함께 참석하시는 분들의 성함을 모두 적어주세요"
+                        placeholder="List the names of everyone attending with you"></textarea>
             </label>
 
             <label class="rsvp-field">
@@ -1337,9 +1351,9 @@
               </span>
               <textarea name="dietary"
                         rows="3"
-                        data-placeholder-en="Optional — tell us anything we should know"
-                        data-placeholder-ko="선택 사항 — 알아야 할 내용이 있다면 적어주세요"
-                        placeholder="Optional — tell us anything we should know"></textarea>
+                        data-placeholder-en="Optional — include the guest's name if a restriction applies to one person"
+                        data-placeholder-ko="선택 사항 — 특정 참석자에게 해당된다면 성함도 함께 적어주세요"
+                        placeholder="Optional — include the guest's name if a restriction applies to one person"></textarea>
             </label>
           </div>
 

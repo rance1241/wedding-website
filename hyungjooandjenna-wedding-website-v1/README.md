@@ -146,3 +146,23 @@ The RSVP endpoint has already been inserted into `script.js`:
 https://script.google.com/macros/s/AKfycbw81TUn78l1R8wq8bM9kiS79tA9eYIbH0SITj0mYXL2EM4vxqHDC2ElETprccZ30FM/exec
 
 No manual script.js edit is needed for this build.
+
+
+## Version 4.13 — Final RSVP polish
+
+- RSVP options now use a visible pale-sage card background and border before hover
+- Hover remains darker and now has a subtle lift/shadow
+- Added visible `Select →` / `선택하기 →` cue to each option
+- Selected choice remains dark sage
+- RSVP instruction is now a contrasting highlighted box
+- Latest working Google Apps Script endpoint is preconfigured
+
+
+## Version 4.14 updates
+
+- Mobile navigation is now a fully opaque foreground overlay with a higher stacking order
+- Menu remains scrollable on small screens
+- RSVP changed from plus-one to:
+  - total party size
+  - additional guest names
+- Existing working Google Sheets endpoint remains compatible; no redeployment required
