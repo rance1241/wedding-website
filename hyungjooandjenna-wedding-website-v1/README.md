@@ -137,3 +137,12 @@ Added official links for:
   - Note
 - Not Attending hides the meal/guest fields
 - Added Google Sheets backend template and setup instructions
+
+
+## Version 4.10 update
+
+The RSVP endpoint has already been inserted into `script.js`:
+
+https://script.google.com/macros/s/AKfycbw81TUn78l1R8wq8bM9kiS79tA9eYIbH0SITj0mYXL2EM4vxqHDC2ElETprccZ30FM/exec
+
+No manual script.js edit is needed for this build.

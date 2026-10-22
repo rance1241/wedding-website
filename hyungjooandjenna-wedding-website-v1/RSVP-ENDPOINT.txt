@@ -1,0 +1,5 @@
+Configured RSVP endpoint:
+
+https://script.google.com/macros/s/AKfycbw81TUn78l1R8wq8bM9kiS79tA9eYIbH0SITj0mYXL2EM4vxqHDC2ElETprccZ30FM/exec
+
+This website build has the endpoint already inserted into script.js.

@@ -1,88 +1,46 @@
-# Connect the Main Website RSVP to Google Sheets
+# FINAL RSVP SETUP — PRECONFIGURED
 
-The RSVP interface is already built into the website. This one-time setup makes submissions save automatically to a Google Sheet.
+Your Google Sheet ID is already inserted into the supplied Apps Script:
 
-## 1. Create a Google Sheet
-Create a new Google Sheet for wedding RSVPs.
+`1b2Ffsjqf7IEbnPmCVbX2doHhvDGzWYhzPC00q8idjm0`
 
-The Sheet URL will look similar to:
+Your wedding website is already configured to call:
 
-`https://docs.google.com/spreadsheets/d/ABC123XYZ/edit`
+`https://script.google.com/macros/s/AKfycbw81TUn78l1R8wq8bM9kiS79tA9eYIbH0SITj0mYXL2EM4vxqHDC2ElETprccZ30FM/exec`
 
-The Sheet ID is the part between `/d/` and `/edit`:
+## Do this exactly
 
-`ABC123XYZ`
+1. Open the Apps Script project connected to your RSVP Google Sheet.
+2. Delete ALL code currently in the editor.
+3. Open `google-apps-script-main-rsvp.gs` from this package.
+4. Copy/paste the entire file into Apps Script.
+5. Click Save.
+6. At the top of the Apps Script editor, confirm the function dropdown contains:
+   - `doGet`
+   - `doPost`
+   - `jsonResponse`
 
-## 2. Open Apps Script
-Inside the Google Sheet, choose:
+If `doGet` is not in that dropdown, the code was not pasted/saved correctly.
 
-**Extensions → Apps Script**
+7. Click **Deploy → Manage deployments**.
+8. Edit the deployment that uses this URL:
+   `https://script.google.com/macros/s/AKfycbw81TUn78l1R8wq8bM9kiS79tA9eYIbH0SITj0mYXL2EM4vxqHDC2ElETprccZ30FM/exec`
+9. Under Version, choose **New version**.
+10. Confirm:
+   - Execute as: Me
+   - Who has access: Anyone
+11. Click Deploy.
 
-Delete the starter code.
+## Test the backend BEFORE testing the wedding website
 
-## 3. Paste the backend
-Open this file from the website package:
-
-`google-apps-script-main-rsvp.gs`
-
-Paste all of it into Apps Script.
-
-Replace:
-
-`PASTE_GOOGLE_SHEET_ID_HERE`
-
-with your real Google Sheet ID.
-
-## 4. Deploy it
-In Apps Script choose:
-
-**Deploy → New deployment → Web app**
-
-Use:
-
-- Execute as: **Me**
-- Who has access: **Anyone**
-
-Click Deploy and authorize it.
-
-Copy the Web App URL.
-
-## 5. Add the URL to the website
 Open:
 
-`script.js`
+`https://script.google.com/macros/s/AKfycbw81TUn78l1R8wq8bM9kiS79tA9eYIbH0SITj0mYXL2EM4vxqHDC2ElETprccZ30FM/exec`
 
-Find:
+You should see JSON similar to:
 
-`const MAIN_RSVP_ENDPOINT = "";`
+`{"ok":true,"message":"RSVP endpoint is working","spreadsheet":"YOUR SHEET NAME"}`
 
-Paste the Web App URL between the quotes:
+If you still see `Script function not found: doGet`, Google is still serving an older deployment version.
 
-`const MAIN_RSVP_ENDPOINT = "YOUR_WEB_APP_URL";`
-
-Commit the updated `script.js` to GitHub. Vercel will redeploy automatically.
-
-## What the Google Sheet stores
-
-The sheet tab will be called:
-
-`Website RSVP`
-
-Columns:
-
-- Submitted At
-- Attendance
-- Name
-- Plus One
-- Plus-One Name
-- Party Size
-- Dietary Restrictions / Food Allergies
-- Note
-- Language
-
-## Attendance choices
-
-- Korea Wedding
-- U.S. Reception Party
-- Both
-- Not Attending
+Only after the `/exec` URL shows `"ok":true` should you test the RSVP on the wedding website.
