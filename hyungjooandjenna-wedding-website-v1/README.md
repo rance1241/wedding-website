@@ -206,3 +206,19 @@ No manual script.js edit is needed for this build.
 - Replaced engagement photo #15
 - Replaced engagement photo #16
 - Kept U.S. reception update, RSVP connection, mobile fixes, and gallery counts unchanged
+
+
+## Version 4.20 update
+
+- U.S. Reception Party start time finalized at 3:00 PM
+- No end time is displayed
+- Reception header and RSVP option updated to show 3:00 PM
+- All V4.19 photo, RSVP, mobile, and gallery updates preserved
+
+
+## Version 4.21 update
+
+- Added a new “What to Do” / “추천 관광” navigation tab.
+- Added six comfortable Seoul activity suggestions geared toward older guests.
+- Added Seoul Danurim accessible-tourism information.
+- Preserved the July 31, 2027 U.S. reception details, RSVP connection, galleries, mobile menu and video sizing.
