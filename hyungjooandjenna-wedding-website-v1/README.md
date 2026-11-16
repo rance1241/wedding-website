@@ -181,3 +181,28 @@ No manual script.js edit is needed for this build.
 - Added viewport-based maximum height so the full video fits on screen more comfortably
 - Preserved the original video aspect ratio
 - Prevented horizontal overflow on phones and smaller screens
+
+
+## Version 4.17
+- Added two uploaded beach photos as Cutscenes #15 and #16.
+- Shifted previous Cutscenes #15–21 to #17–23.
+- Gallery now contains 23 Cutscenes total.
+- All V4.16 functionality is otherwise unchanged.
+
+
+## Version 4.18 update
+
+- U.S. Reception Party date finalized: Saturday, July 31, 2027
+- U.S. Reception Party location finalized:
+  1074 Carriage Circle, Fond du Lac, WI 54935
+- Google Maps link updated to the Fond du Lac address
+- RSVP card updated to show July 31, 2027 · Fond du Lac
+- Start time remains to be announced
+- All V4.17 gallery, RSVP, mobile menu, and Trailer updates preserved
+
+
+## Version 4.19 update
+
+- Replaced engagement photo #15
+- Replaced engagement photo #16
+- Kept U.S. reception update, RSVP connection, mobile fixes, and gallery counts unchanged
