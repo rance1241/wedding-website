@@ -222,3 +222,11 @@ No manual script.js edit is needed for this build.
 - Added six comfortable Seoul activity suggestions geared toward older guests.
 - Added Seoul Danurim accessible-tourism information.
 - Preserved the July 31, 2027 U.S. reception details, RSVP connection, galleries, mobile menu and video sizing.
+
+
+## Version 4.22 update
+
+- Removed the Seoul Danurim section from What to Do
+- Removed the wheelchair/accessibility sentence from the Lotte World Folk Museum description
+- Renamed U.S. Reception Party to U.S. Party throughout the website and RSVP logic
+- Preserved all V4.21 content and current RSVP connection

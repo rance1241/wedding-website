@@ -201,7 +201,7 @@ const MAIN_RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbz8qLGhj-QPN
   function attendanceLabel(value) {
     const labels = {
       "Korea Wedding": { en: "Korea Wedding", ko: "한국 결혼식" },
-      "U.S. Reception Party": { en: "U.S. Reception Party", ko: "미국 리셉션 파티" },
+      "U.S. Party": { en: "U.S. Party", ko: "미국 파티" },
       "Both": { en: "Both celebrations", ko: "두 행사 모두" },
       "Not Attending": { en: "Not attending", ko: "불참" }
     };
