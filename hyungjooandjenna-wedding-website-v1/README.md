@@ -230,3 +230,17 @@ No manual script.js edit is needed for this build.
 - Removed the wheelchair/accessibility sentence from the Lotte World Folk Museum description
 - Renamed U.S. Reception Party to U.S. Party throughout the website and RSVP logic
 - Preserved all V4.21 content and current RSVP connection
+
+
+## Version 4.23 update
+
+- Removed the word “reception” from the U.S. Party description in English and Korean.
+- All other V4.22 content and functionality remain unchanged.
+
+
+## Version 4.24 update
+
+- Removed all accessibility-focused wording from the What to Do section
+- Removed references to wheelchair access/services, accessible pathways, elevator access, and wheelchair rentals
+- Kept the section focused on comfortable sightseeing and activities for older guests
+- All other website content and functionality preserved
