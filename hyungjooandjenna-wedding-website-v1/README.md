@@ -244,3 +244,14 @@ No manual script.js edit is needed for this build.
 - Removed references to wheelchair access/services, accessible pathways, elevator access, and wheelchair rentals
 - Kept the section focused on comfortable sightseeing and activities for older guests
 - All other website content and functionality preserved
+
+
+## Version 4.25 update
+
+- Fixed the HTML section boundary between What to Do and Hotels
+- What to Do is now a completely separate section
+- Restored the full standalone Hotels section
+- Restored both Jamsil and Gangnam hotel recommendations
+- Restored the Hotels heading, introduction, and price note
+- Hotel navigation now points to a real `#hotels` section again
+- Preserved all V4.24 content, RSVP connection, galleries, U.S. Party details, and styling
